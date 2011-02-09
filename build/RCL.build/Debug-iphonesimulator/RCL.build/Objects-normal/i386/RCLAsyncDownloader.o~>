@@ -1,0 +1,5 @@
+/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m: In function '-[RCLDownloadOperation start]':
+/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m:28: warning: unused variable 'conn'
+/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m: At top level:
+/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m:33: warning: property 'delegate' requires method '-delegate' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m:33: warning: property 'delegate' requires the method 'setDelegate:' to be defined - use @synthesize, @dynamic or provide a method implementation
