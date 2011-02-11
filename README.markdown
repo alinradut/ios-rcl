@@ -7,9 +7,10 @@ The library tries to solve a number of issues that constantly arise during devel
 The libary is still under heavy development but is expected to have a rapid progress.
 
 There are a number of goals that will be pursued in developing this library:
-+ write clean, understandable code that minimizes need for customizations, but make customizing a breeze 
-+ document all source code using Doxygen style comments
-+ cover the code as much as possible using unit testing
+
+* write clean, understandable code that minimizes need for customizations, but make customizing a breeze 
+* document all source code using Doxygen style comments
+* cover the code as much as possible using unit testing
 
 ## Components
 ### RCLAsyncImageView
@@ -34,6 +35,7 @@ A full screen image viewer similar to the default image library viewer from iOS.
 ### RCLTableViewController
 
 An enhanced table view controller that eases the use of often requested enhancements: 
- * pull to refresh
- * text filtering
- * pagination
+
+* pull to refresh
+* text filtering
+* pagination
