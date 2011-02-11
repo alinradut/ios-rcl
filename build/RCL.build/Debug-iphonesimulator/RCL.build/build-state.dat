@@ -1,396 +1,0 @@
-TRCL
-v7
-r0
-t318981610.415466
-cCheck dependencies
-cProcessInfoPlistFile /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/Info.plist RCL-Info.plist
-cCompileXIB /Users/clw/Projects/RCL/MainWindow.xib
-cCompileXIB /Users/clw/Projects/RCL/RootViewController.xib
-cProcessPCH /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch.gch RCL_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/main.o /Users/clw/Projects/RCL/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAppDelegate.o /Users/clw/Projects/RCL/Classes/RCLAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RootViewController.o /Users/clw/Projects/RCL/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncDownloader.o /Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLCache.o /Users/clw/Projects/RCL/Classes/RCLCache.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncImageView.o /Users/clw/Projects/RCL/Classes/RCLAsyncImageView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLString.o /Users/clw/Projects/RCL/Classes/RCLString.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL normal i386
-cGenerateDSYMFile /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app.dSYM /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL
-cTouch /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
-c000000004C793C540000000000000132
-t1283013716
-s306
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004BFDFE39000000000027C7D0
-t1274936889
-s2607056
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004BFDFE7C000000000029D5D0
-t1274936956
-s2741712
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004BFDFE6E0000000000001466
-t1274936942
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C0470BB00000000000009CD
-t1275359419
-s2509
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C0471620000000001D47210
-t1275359586
-s30700048
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/Availability.h
-c000000004BF4CBF90000000000001A3B
-t1274334201
-s6715
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/CommonCrypto/CommonDigest.h
-c000000004A11E8210000000000002407
-t1242687521
-s9223
-
-N/Users/clw/Projects/RCL/Classes/RCLAppDelegate.h
-c000000004D52F69800000000000001BD
-t1297282712
-s445
-i<UIKit/UIKit.h>
-
-N/Users/clw/Projects/RCL/Classes/RCLAppDelegate.m
-c000000004D52F6980000000000000A83
-t1297282712
-s2691
-i"RCLAppDelegate.h"
-i"RootViewController.h"
-
-N/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.h
-c000000004D530E69000000000000030A
-t1297288809
-s778
-i<Foundation/Foundation.h>
-
-N/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m
-c000000004D530E680000000000000442
-t1297288808
-s1090
-i"RCLAsyncDownloader.h"
-
-N/Users/clw/Projects/RCL/Classes/RCLAsyncImageView.h
-c000000004D52F72600000000000000DA
-t1297282854
-s218
-i<Foundation/Foundation.h>
-
-N/Users/clw/Projects/RCL/Classes/RCLAsyncImageView.m
-c000000004D52F72600000000000000CB
-t1297282854
-s203
-i"RCLAsyncImageView.h"
-
-N/Users/clw/Projects/RCL/Classes/RCLCache.h
-c000000004D5301710000000000000332
-t1297285489
-s818
-i<Foundation/Foundation.h>
-
-N/Users/clw/Projects/RCL/Classes/RCLCache.m
-c000000004D53041F0000000000000566
-t1297286175
-s1382
-i"RCLCache.h"
-i"RCLString.h"
-
-N/Users/clw/Projects/RCL/Classes/RCLString.h
-c000000004D5300750000000000000189
-t1297285237
-s393
-i<Foundation/Foundation.h>
-i<CommonCrypto/CommonDigest.h>
-
-N/Users/clw/Projects/RCL/Classes/RCLString.m
-c000000004D52FDFC000000000000020B
-t1297284604
-s523
-i"RCLString.h"
-
-N/Users/clw/Projects/RCL/Classes/RootViewController.h
-c000000004D52F69800000000000000DD
-t1297282712
-s221
-i<UIKit/UIKit.h>
-
-N/Users/clw/Projects/RCL/Classes/RootViewController.m
-c000000004D52F69800000000000010B5
-t1297282712
-s4277
-i"RootViewController.h"
-
-N/Users/clw/Projects/RCL/MainWindow.xib
-c000000004D52F6980000000000005FE4
-t1297282712
-s24548
-
-N/Users/clw/Projects/RCL/RCL_Prefix.pch
-c000000004D52F6980000000000000138
-t1297282712
-s312
-i<Availability.h>
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/clw/Projects/RCL/RootViewController.xib
-c000000004D52F698000000000000444E
-t1297282712
-s17486
-
-N/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app
-t1297288810
-s238
-
-N/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app.dSYM
-t1297288810
-s102
-
-N/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/Info.plist
-t1297283660
-s575
-
-N/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/MainWindow.nib
-t1297283663
-s1505
-
-N/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/PkgInfo
-t1297283660
-s8
-
-N/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL
-t1297288810
-s25724
-
-N/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RootViewController.nib
-t1297283663
-s979
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCL.LinkFileList
-c000000004D52FD6900000000000002F1
-t1297284457
-s753
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAppDelegate.o
-t1297283666
-s49148
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncDownloader.o
-t1297288810
-s11672
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncImageView.o
-t1297283667
-s5088
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLCache.o
-t1297288009
-s12296
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLString.o
-t1297286053
-s7272
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RootViewController.o
-t1297283666
-s38028
-
-N/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/main.o
-t1297283666
-s6272
-
-N/Users/clw/Projects/RCL/main.m
-c000000004D52F698000000000000015B
-t1297282712
-s347
-i<UIKit/UIKit.h>
-
-N/var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch.gch
-t1297283666
-s10212912
-
-NRCL-Info.plist
-c000000004D52F698000000000000038D
-t1297282712
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies318981609#318981610#0(0"0(0#1#0"2441572384#0"0#
-
-CCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAppDelegate.o /Users/clw/Projects/RCL/Classes/RCLAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318976466.305367
-e318976466.736679
-r1
-xCompileC
-xbuild/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAppDelegate.o
-x/Users/clw/Projects/RCL/Classes/RCLAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@56"Compile /Users/clw/Projects/RCL/Classes/RCLAppDelegate.m318976466#318976466#0(0"0(0#0#48"/Users/clw/Projects/RCL/Classes/RCLAppDelegate.m2441572384#1684"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -include /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch -c /Users/clw/Projects/RCL/Classes/RCLAppDelegate.m -o /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAppDelegate.o0#
-
-CCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncDownloader.o /Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318981609.606668
-e318981610.144304
-r1
-xCompileC
-xbuild/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncDownloader.o
-x/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-o/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m:52: warning: incomplete implementation of class 'RCLAsyncDownloader'
-o/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m:52: warning: method definition for '-downloadURL:withDelegate:' not found
-lSLF07#2@60"Compile /Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m318981609#318981610#0(249"/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m:52: warning: incomplete implementation of class 'RCLAsyncDownloader'/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m:52: warning: method definition for '-downloadURL:withDelegate:' not found2(22@55"Incomplete implementation of class 'RCLAsyncDownloader'318981610#0#122#0(6@52"/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m318981608#52#0#52#0#38"incomplete implementation of class '*'0(22@60"Method definition for '-downloadURL:withDelegate:' not found318981610#122#127#0(6@52"/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m318981608#52#0#52#0#35"method definition for '*' not found0(0#0#52"/Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m2441572384#1692"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -include /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch -c /Users/clw/Projects/RCL/Classes/RCLAsyncDownloader.m -o /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncDownloader.o0#
-
-CCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncImageView.o /Users/clw/Projects/RCL/Classes/RCLAsyncImageView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318976467.022561
-e318976467.316356
-r1
-xCompileC
-xbuild/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncImageView.o
-x/Users/clw/Projects/RCL/Classes/RCLAsyncImageView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@59"Compile /Users/clw/Projects/RCL/Classes/RCLAsyncImageView.m318976467#318976467#0(0"0(0#0#51"/Users/clw/Projects/RCL/Classes/RCLAsyncImageView.m2441572384#1690"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -include /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch -c /Users/clw/Projects/RCL/Classes/RCLAsyncImageView.m -o /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLAsyncImageView.o0#
-
-CCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLCache.o /Users/clw/Projects/RCL/Classes/RCLCache.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318980808.393637
-e318980809.152331
-r1
-xCompileC
-xbuild/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLCache.o
-x/Users/clw/Projects/RCL/Classes/RCLCache.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@50"Compile /Users/clw/Projects/RCL/Classes/RCLCache.m318980808#318980809#0(0"0(0#0#42"/Users/clw/Projects/RCL/Classes/RCLCache.m2441572384#1672"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -include /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch -c /Users/clw/Projects/RCL/Classes/RCLCache.m -o /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLCache.o0#
-
-CCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLString.o /Users/clw/Projects/RCL/Classes/RCLString.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318978853.074881
-e318978853.402745
-r1
-xCompileC
-xbuild/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLString.o
-x/Users/clw/Projects/RCL/Classes/RCLString.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@51"Compile /Users/clw/Projects/RCL/Classes/RCLString.m318978853#318978853#0(0"0(0#0#43"/Users/clw/Projects/RCL/Classes/RCLString.m2441572384#1674"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -include /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch -c /Users/clw/Projects/RCL/Classes/RCLString.m -o /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCLString.o0#
-
-CCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RootViewController.o /Users/clw/Projects/RCL/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318976466.615535
-e318976467.015454
-r1
-xCompileC
-xbuild/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RootViewController.o
-x/Users/clw/Projects/RCL/Classes/RootViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/clw/Projects/RCL/Classes/RootViewController.m318976466#318976467#0(0"0(0#0#52"/Users/clw/Projects/RCL/Classes/RootViewController.m2441572384#1692"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -include /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch -c /Users/clw/Projects/RCL/Classes/RootViewController.m -o /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RootViewController.o0#
-
-CCompileC build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/main.o /Users/clw/Projects/RCL/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318976466.299813
-e318976466.614979
-r1
-xCompileC
-xbuild/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/main.o
-x/Users/clw/Projects/RCL/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@38"Compile /Users/clw/Projects/RCL/main.m318976466#318976466#0(0"0(0#0#30"/Users/clw/Projects/RCL/main.m4231192#1656"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -include /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch -c /Users/clw/Projects/RCL/main.m -o /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/clw/Projects/RCL/MainWindow.xib
-s318976460.851436
-e318976463.753444
-r1
-xCompileXIB
-x/Users/clw/Projects/RCL/MainWindow.xib
-o2011-02-09 22:34:21.147 ibtool[253:607] _CFGetHostUUIDString: unable to determine UUID for host. Error: 35
-oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
-lSLF07#2@25"CompileXIB MainWindow.xib318976460#318976463#0(191"2011-02-09 22:34:21.147 ibtool[253:607] _CFGetHostUUIDString: unable to determine UUID for host. Error: 35Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#38"/Users/clw/Projects/RCL/MainWindow.xib4231192#521"    cd /Users/clw/Projects/RCL    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/MainWindow.nib /Users/clw/Projects/RCL/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
-
-CCompileXIB /Users/clw/Projects/RCL/RootViewController.xib
-s318976460.856649
-e318976463.750624
-r1
-xCompileXIB
-x/Users/clw/Projects/RCL/RootViewController.xib
-o2011-02-09 22:34:21.172 ibtool[254:607] _CFGetHostUUIDString: unable to determine UUID for host. Error: 35
-oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
-lSLF07#2@33"CompileXIB RootViewController.xib318976460#318976463#0(191"2011-02-09 22:34:21.172 ibtool[254:607] _CFGetHostUUIDString: unable to determine UUID for host. Error: 35Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#46"/Users/clw/Projects/RCL/RootViewController.xib2441572384#537"    cd /Users/clw/Projects/RCL    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RootViewController.nib /Users/clw/Projects/RCL/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
-
-CGenerateDSYMFile /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app.dSYM /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL
-s318981610.282429
-e318981610.401052
-r1
-xGenerateDSYMFile
-x/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app.dSYM
-x/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL
-o2011-02-10 00:00:10.367 dsymutil[1354:607] _CFGetHostUUIDString: unable to determine UUID for host. Error: 35
-lSLF07#2@97"GenerateDSYMFile build/Debug-iphonesimulator/RCL.app.dSYM build/Debug-iphonesimulator/RCL.app/RCL318981610#318981610#0(110"2011-02-10 00:00:10.367 dsymutil[1354:607] _CFGetHostUUIDString: unable to determine UUID for host. Error: 350(0#0#63"/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL2441572384#326"    cd /Users/clw/Projects/RCL    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL -o /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app.dSYM0#
-
-CLd /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL normal i386
-s318981610.144743
-e318981610.281946
-r1
-xLd
-x/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL
-xnormal
-xi386
-lSLF07#2@68"Link /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL318981610#318981610#0(0"0(0#0#0"2441572384#805"    cd /Users/clw/Projects/RCL    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/clw/Projects/RCL/build/Debug-iphonesimulator -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -filelist /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/Objects-normal/i386/RCL.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/RCL0#
-
-CProcessInfoPlistFile /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/Info.plist RCL-Info.plist
-s318976460.800895
-e318976460.850903
-r1
-xProcessInfoPlistFile
-x/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/Info.plist
-xRCL-Info.plist
-lSLF07#2@22"Process RCL-Info.plist318976460#318976460#0(0"0(0#0#38"/Users/clw/Projects/RCL/RCL-Info.plist4231192#422"    cd /Users/clw/Projects/RCL    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility RCL-Info.plist -genpkginfo /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app/Info.plist0#
-
-CProcessPCH /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch.gch RCL_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s318976463.754088
-e318976466.299021
-r1
-xProcessPCH
-x/var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch.gch
-xRCL_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@25"Precompile RCL_Prefix.pch318976463#318976466#0(0"0(0#0#38"/Users/clw/Projects/RCL/RCL_Prefix.pch4231192#1567"    cd /Users/clw/Projects/RCL    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-generated-files.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-own-target-headers.hmap -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-all-target-headers.hmap -iquote /Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/RCL-project-headers.hmap -F/Users/clw/Projects/RCL/build/Debug-iphonesimulator -I/Users/clw/Projects/RCL/build/Debug-iphonesimulator/include -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources/i386 -I/Users/clw/Projects/RCL/build/RCL.build/Debug-iphonesimulator/RCL.build/DerivedSources -c /Users/clw/Projects/RCL/RCL_Prefix.pch -o /var/folders/Lz/Lzx4xZ9wEsyg-EMRhUE1uE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RCL_Prefix-dlhdvtpwapgfphcavcsaehxdpmyq/RCL_Prefix.pch.gch0#
-
-CTouch /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app
-s318981610.401499
-e318981610.415244
-r1
-xTouch
-x/Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app
-lSLF07#2@65"Touch /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app318981610#318981610#0(0"0(0#0#0"2441572384#244"    cd /Users/clw/Projects/RCL    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/clw/Projects/RCL/build/Debug-iphonesimulator/RCL.app0#
-
