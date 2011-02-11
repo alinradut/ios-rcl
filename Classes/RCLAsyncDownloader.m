@@ -10,24 +10,71 @@
 
 @interface RCLDownloadOperation : NSOperation
 {
-    id<RCLAsyncDownloaderDelegate> delegate_;
+    id delegate_;
     NSURL *url_;
-    NSData *downloadedData_;
+    NSMutableData *downloadedData_;
+    NSURLConnection *connection_;
+    long long totalDownloadSize_;
 }
 
-@property (nonatomic, assign) id<RCLAsyncDownloaderDelegate> delegate;
+@property (nonatomic, assign) id delegate;
 @property (nonatomic, retain) NSURL *url;
 @end
 
 @implementation RCLDownloadOperation
 @synthesize url = url_;
+@synthesize delegate = delegate_;
 
 - (void)start {
     downloadedData_ = [[NSMutableData alloc] init];
     NSURLRequest *request = [[[NSURLRequest alloc] initWithURL:url_] autorelease];
-    NSURLConnection *conn  = [[NSURLConnection alloc] initWithRequest:request 
-                                                             delegate:self 
-                                                     startImmediately:YES];
+    connection_ = [[NSURLConnection alloc] initWithRequest:request 
+                                                  delegate:self 
+                                          startImmediately:YES];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    totalDownloadSize_ = [response expectedContentLength];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [downloadedData_ appendData:data];
+    
+    if (totalDownloadSize_ != NSURLResponseUnknownLength 
+        && totalDownloadSize_ != 0
+        && [delegate_ respondsToSelector:@selector(downloader:didUpdateProgress:)]) {
+        float progress = [downloadedData_ length]/totalDownloadSize_;
+        [delegate_ performSelector:@selector(downloader:didUpdateProgress:)
+                        withObject:self
+                        withObject:[NSNumber numberWithFloat:progress]];
+    }
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    [downloadedData_ release];
+    downloadedData_ = nil;
+    
+    [connection_ release];
+    connection_ = nil;
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    [downloadedData_ release];
+    downloadedData_ = nil;
+    
+    [connection_ release];
+    connection_ = nil;
+}
+
+- (void)dealloc {
+    if (connection_ != nil) {
+        [connection_ release];
+    }
+    
+    if (downloadedData_ != nil) {
+        [downloadedData_ release];
+    }
+    [super dealloc];
 }
 
 @end
@@ -48,7 +95,7 @@
         [sharedInstance release];
         sharedInstance = nil;
     }
-
+    
     return sharedInstance;
 }
 
