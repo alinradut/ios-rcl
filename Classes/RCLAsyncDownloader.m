@@ -43,6 +43,7 @@
     if (totalDownloadSize_ != NSURLResponseUnknownLength 
         && totalDownloadSize_ != 0
         && [delegate_ respondsToSelector:@selector(downloader:didUpdateProgress:)]) {
+        
         float progress = [downloadedData_ length]/totalDownloadSize_;
         [delegate_ performSelector:@selector(downloader:didUpdateProgress:)
                         withObject:self
@@ -64,6 +65,25 @@
     
     [connection_ release];
     connection_ = nil;
+}
+
+- (void)cancelForUrl:(NSURL *)url {
+    if (![self isCancelled]
+        && ![self isFinished]
+        && [url isEqual:url]) {
+        [self cancel];
+    }
+}
+
+- (void)cancel {
+    if (connection_ != nil) {
+        [connection_ cancel];
+        [connection_ release];
+    }
+    if (downloadedData_ != nil) {
+        [downloadedData_ release];
+        downloadedData_ = nil;
+    }
 }
 
 - (void)dealloc {
@@ -106,8 +126,13 @@
     op.delegate = delegate;
     op.url = url;
     [queue_ addOperation:op];
+    [op release];
 }
 
+- (void)cancelDownloadForURL:(NSURL *)url {
+    [[queue_ operations] makeObjectsPerformSelector:@selector(cancelForUrl:) 
+                                         withObject:url];
+}
 
 #pragma mark -
 #pragma Memory management

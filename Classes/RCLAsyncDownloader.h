@@ -40,6 +40,11 @@
 - (void)downloadURL:(NSURL *)url withDelegate:(id<RCLAsyncDownloaderDelegate>)delegate;
 
 /*!
+ Cancel download for specified URL
+ */
+- (void)cancelDownloadForURL:(NSURL *)url;
+
+/*!
  terminateInstance will kill the current singleton instance. 
  This method should be called in situations of low memory warnings.
  The singleton instance will be re-created when the next call to 
