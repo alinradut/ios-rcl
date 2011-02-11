@@ -26,6 +26,7 @@
     BOOL terminate_;
 }
 
+//! NSOperationQueue that will allow us to throttle the number of concurrent requests
 @property (nonatomic, retain) NSOperationQueue *queue;
 @property (nonatomic) BOOL terminate;
 
