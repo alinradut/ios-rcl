@@ -11,28 +11,29 @@ There are a number of goals that will be pursued in developing this library:
 * document all source code using Doxygen style comments
 * cover the code as much as possible using unit testing
 
-## RCLAsyncImageView
+## Components
+### RCLAsyncImageView
 
 An asynchronous image view that allows the loading of remote images in background.
 The images can be cached to disk using the *RCLCache* class.
 
 This class depends on the *RCLAsyncDownloader* class to download the image data.
 
-## RCLAsyncImageButton
+### RCLAsyncImageButton
 
 A button class that can load its state-dependent images from remote URLs. This class is similar in dependencies with the RCLAsyncImageView class.
 
-## RCLGallery
+### RCLGallery
 
 A gallery class that allows the user to browse through a list of images.
 
-## RCLImageViewer
+### RCLImageViewer
 
 A full screen image viewer similar to the default image library viewer from iOS.
 
-## RCLTableViewController
+### RCLTableViewController
 
 An enhanced table view controller that eases the use of often requested enhancements: 
-* pull to refresh
-* text filtering
-* pagination
+ * pull to refresh
+ * text filtering
+ * pagination
