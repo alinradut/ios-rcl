@@ -7,9 +7,9 @@ The library tries to solve a number of issues that constantly arise during devel
 The libary is still under heavy development but is expected to have a rapid progress.
 
 There are a number of goals that will be pursued in developing this library:
-* write clean, understandable code that minimizes need for customizations, but make customizing a breeze 
-* document all source code using Doxygen style comments
-* cover the code as much as possible using unit testing
++ write clean, understandable code that minimizes need for customizations, but make customizing a breeze 
++ document all source code using Doxygen style comments
++ cover the code as much as possible using unit testing
 
 ## Components
 ### RCLAsyncImageView
