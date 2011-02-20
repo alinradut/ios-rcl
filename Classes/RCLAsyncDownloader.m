@@ -8,6 +8,10 @@
 
 #import "RCLAsyncDownloader.h"
 
+#if RCL_ASNC_DOWNLOADER_USE_CACHE
+#import "RCLCache.h"
+#endif
+
 @interface RCLDownloadOperation : NSOperation
 {
     id delegate_;
@@ -42,16 +46,21 @@
     
     if (totalDownloadSize_ != NSURLResponseUnknownLength 
         && totalDownloadSize_ != 0
-        && [delegate_ respondsToSelector:@selector(downloader:didUpdateProgress:)]) {
+        && [delegate_ respondsToSelector:@selector(downloaderDidUpdateProgress:forUrl:)]) {
         
         float progress = [downloadedData_ length]/totalDownloadSize_;
-        [delegate_ performSelector:@selector(downloader:didUpdateProgress:)
-                        withObject:self
-                        withObject:[NSNumber numberWithFloat:progress]];
+        [delegate_ performSelector:@selector(downloaderDidUpdateProgress:forUrl:)
+                        withObject:[NSNumber numberWithFloat:progress]
+                        withObject:url_];
     }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    if ([delegate_ respondsToSelector:@selector(downloaderDidDownloadData:forUrl:)]) {
+        [delegate_ performSelector:@selector(downloaderDidDownloadData:forUrl:) 
+                        withObject:downloadedData_ 
+                        withObject:url_];
+    }
     [downloadedData_ release];
     downloadedData_ = nil;
     
@@ -60,6 +69,11 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    if ([delegate_ respondsToSelector:@selector(downloaderDidFailWithError:forUrl:)]) {
+        [delegate_ performSelector:@selector(downloaderDidFailWithError:forUrl:) 
+                        withObject:error 
+                        withObject:url_];
+    }
     [downloadedData_ release];
     downloadedData_ = nil;
     
@@ -67,10 +81,11 @@
     connection_ = nil;
 }
 
-- (void)cancelForUrl:(NSURL *)url {
+- (void)cancelDownload:(NSDictionary *)obj {
     if (![self isCancelled]
         && ![self isFinished]
-        && [url isEqual:url]) {
+        && [url_ isEqual:[obj objectForKey:@"url"]]
+        && [delegate_ isEqual:[obj objectForKey:@"delegate"]]) {
         [self cancel];
     }
 }
@@ -94,6 +109,7 @@
     if (downloadedData_ != nil) {
         [downloadedData_ release];
     }
+    self.url = nil;
     [super dealloc];
 }
 
@@ -121,7 +137,20 @@
 
 #pragma mark -
 #pragma mark Download
-- (void)downloadURL:(NSURL *)url withDelegate:(id<RCLAsyncDownloaderDelegate>)delegate {
+- (void)downloadURL:(NSURL *)url withDelegate:(id)delegate {
+
+#if RCL_ASNC_DOWNLOADER_USE_CACHE
+    if ([[RCLCache instance] objectAvailableForKeyPath:[url absoluteString]]) {
+        
+        if ([delegate respondsToSelector:@selector(downloaderDidDownloadData:forUrl:)]) {
+            [delegate performSelector:@selector(downloaderDidDownloadData:forUrl:) 
+                           withObject:[[RCLCache instance] objectForKeyPath:[url absoluteString]]
+                           withObject:url];
+        }
+        return;
+    }
+#endif
+    
     RCLDownloadOperation *op = [[RCLDownloadOperation alloc] init];
     op.delegate = delegate;
     op.url = url;
@@ -129,9 +158,10 @@
     [op release];
 }
 
-- (void)cancelDownloadForURL:(NSURL *)url {
-    [[queue_ operations] makeObjectsPerformSelector:@selector(cancelForUrl:) 
-                                         withObject:url];
+- (void)cancelDownloadForURL:(NSURL *)url delegate:(id)delegate {
+    NSDictionary *obj = [NSDictionary dictionaryWithObjectsAndKeys:url,@"url",delegate,@"delegate", nil];
+    [[queue_ operations] makeObjectsPerformSelector:@selector(cancelDownload:) 
+                                         withObject:obj];
 }
 
 #pragma mark -

@@ -7,21 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RCL.h"
 
 #define RCL_MAX_CONCURRENT_DOWNLOADS    10
-
-@class RCLAsyncDownloader;
-
-@protocol RCLAsyncDownloaderDelegate
-- (void)downloader:(RCLAsyncDownloader *) didDownloadData:(NSData *)data;
-
-@optional
-- (void)downloader:(RCLAsyncDownloader *) didUpdateProgress:(NSNumber *)progress;
-- (void)downloader:(RCLAsyncDownloader *) didFailWithError:(NSError *)error;
-@end
-
+#define RCL_ASNC_DOWNLOADER_USE_CACHE   1
 
 @interface RCLAsyncDownloader : NSObject {
+@private
     NSOperationQueue *queue_;
     BOOL terminate_;
 }
@@ -43,10 +35,10 @@
 /*!
  Cancel download for specified URL
  */
-- (void)cancelDownloadForURL:(NSURL *)url;
+- (void)cancelDownloadForURL:(NSURL *)url delegate:(id)delegate;
 
 /*!
- terminateInstance will kill the current singleton instance. 
+ Kill the current singleton instance. 
  This method should be called in situations of low memory warnings.
  The singleton instance will be re-created when the next call to 
  [RCLAsyncDownloader instance] will be made.

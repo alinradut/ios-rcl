@@ -7,7 +7,8 @@
 //
 
 #import "RootViewController.h"
-
+#import "RCL.h"
+#import "RCLAsyncImageView.h"
 
 @implementation RootViewController
 
@@ -65,7 +66,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 1;
 }
 
 
@@ -78,6 +79,9 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+    
+    RCLAsyncImageView *iv = [[RCLAsyncImageView alloc] initWithURL:@"http://www.sandia.gov/media/images/jpg/f4_image1.jpg" temporaryImage:nil];
+    [cell addSubview:iv];
     
 	// Configure the cell.
 

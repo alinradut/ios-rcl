@@ -42,6 +42,7 @@
 		3B918D8913032EA600776B29 /* RCLAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncImageView.m; sourceTree = "<group>"; };
 		3B918DA61303343700776B29 /* RCLString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLString.h; sourceTree = "<group>"; };
 		3B918DA71303343700776B29 /* RCLString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLString.m; sourceTree = "<group>"; };
+		3B9D569113088F590036C804 /* RCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCL.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* RCL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RCL-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +74,7 @@
 				3B918D8613032E7500776B29 /* RCLCache.m */,
 				3B918D8813032EA600776B29 /* RCLAsyncImageView.h */,
 				3B918D8913032EA600776B29 /* RCLAsyncImageView.m */,
+				3B9D569113088F590036C804 /* RCL.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
