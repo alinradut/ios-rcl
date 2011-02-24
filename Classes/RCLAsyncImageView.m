@@ -57,6 +57,10 @@
     downloadInProgress_ = NO;
 }
 
+- (void)downloaderDidFailWithError:(NSError *)error forUrl:(NSURL *)url {
+    NSLog(@"%@", error);
+}
+
 - (void)dealloc {
     if (downloadInProgress_) {
         [[RCLAsyncDownloader instance] cancelDownloadForURL:url_ delegate:self];

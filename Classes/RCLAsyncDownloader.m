@@ -19,6 +19,8 @@
     NSMutableData *downloadedData_;
     NSURLConnection *connection_;
     long long totalDownloadSize_;
+    BOOL executing_;
+    BOOL finished_;
 }
 
 @property (nonatomic, assign) id delegate;
@@ -30,11 +32,35 @@
 @synthesize delegate = delegate_;
 
 - (void)start {
+    if ([NSThread isMainThread]) {
+        [self performSelectorOnMainThread:@selector(start) 
+                               withObject:nil 
+                            waitUntilDone:NO];
+        return;
+    }
+    [self willChangeValueForKey:@"isExecuting"];
+    executing_ = YES;
+    [self didChangeValueForKey:@"isExecuting"];
     downloadedData_ = [[NSMutableData alloc] init];
     NSURLRequest *request = [[[NSURLRequest alloc] initWithURL:url_] autorelease];
     connection_ = [[NSURLConnection alloc] initWithRequest:request 
-                                                  delegate:self 
-                                          startImmediately:YES];
+                                                  delegate:self];
+    do {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    } while (executing_);
+    
+}
+
+- (BOOL)isExecuting {
+    return executing_;
+}
+
+- (BOOL)isConcurrent {
+    return YES;
+}
+
+- (BOOL)isFinished {
+    return finished_;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -66,6 +92,13 @@
     
     [connection_ release];
     connection_ = nil;
+    
+    [self willChangeValueForKey:@"isExecuting"];
+    [self willChangeValueForKey:@"isFinished"];
+    executing_ = NO;
+    finished_ = NO;
+    [self didChangeValueForKey:@"isExecuting"];
+    [self didChangeValueForKey:@"isFinished"];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -79,6 +112,13 @@
     
     [connection_ release];
     connection_ = nil;
+    
+    [self willChangeValueForKey:@"isExecuting"];
+    [self willChangeValueForKey:@"isFinished"];
+    executing_ = NO;
+    finished_ = NO;
+    [self didChangeValueForKey:@"isExecuting"];
+    [self didChangeValueForKey:@"isFinished"];
 }
 
 - (void)cancelDownload:(NSDictionary *)obj {
@@ -99,6 +139,13 @@
         [downloadedData_ release];
         downloadedData_ = nil;
     }
+    [self willChangeValueForKey:@"isExecuting"];
+    [self willChangeValueForKey:@"isFinished"];
+    executing_ = NO;
+    finished_ = NO;
+    [self didChangeValueForKey:@"isExecuting"];
+    [self didChangeValueForKey:@"isFinished"];
+
 }
 
 - (void)dealloc {
