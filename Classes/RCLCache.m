@@ -15,6 +15,23 @@
     static RCLCache *sharedInstance;
     if (!sharedInstance) {
         sharedInstance = [[RCLCache alloc] init];
+        BOOL isDirectory = NO;
+        if (![[NSFileManager defaultManager] fileExistsAtPath:RCL_CACHE_DIRECTORY 
+                                                 isDirectory:isDirectory]) {
+            NSError *error = nil;
+            [[NSFileManager defaultManager] createDirectoryAtPath:RCL_CACHE_DIRECTORY 
+                                      withIntermediateDirectories:YES 
+                                                       attributes:nil 
+                                                            error:&error];
+            if (error != nil) {
+                NSLog(@"An error has occured while creating the cache directory %@: %@", 
+                      RCL_CACHE_DIRECTORY, [error localizedDescription]);
+                [error release];
+            }
+        }  
+        if (isDirectory) {
+            NSAssert(NO,@"Cannot create cache directory because a file already exists at path");
+        }
     }
     return sharedInstance;
 }
