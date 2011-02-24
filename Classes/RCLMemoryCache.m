@@ -26,18 +26,23 @@
 }
 
 - (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath {
+    NSAssert(object != nil, @"object cannot be nil");
+    NSAssert([keyPath length], @"keyPath cannot be nil or empty");
     [memoryCache_ setObject:object forKey:[keyPath md5]];
 }
 
 - (BOOL)objectAvailableForKeyPath:(NSString *)keyPath {
+    NSAssert([keyPath length], @"keyPath cannot be nil or empty");
     return [memoryCache_ objectForKey:[keyPath md5]] != nil?YES:NO;
 }
 
 - (NSData *)objectForKeyPath:(NSString *)keyPath {
+    NSAssert([keyPath length], @"keyPath cannot be nil or empty");
     return [memoryCache_ objectForKey:[keyPath md5]];
 }
 
 - (void)removeObjectForKeyPath:(NSString *)keyPath {
+    NSAssert([keyPath length], @"keyPath cannot be nil or empty");
     [memoryCache_ removeObjectForKey:[keyPath md5]];
 }
 

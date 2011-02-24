@@ -39,3 +39,34 @@ An enhanced table view controller that eases the use of often requested enhancem
 * pull to refresh
 * text filtering
 * pagination
+
+## Backbone classes
+
+The reusable components depend on a number of backbone classes to do their job properly.
+
+### RCLAsyncDownloader
+An asynchronous downloader singleton class that allows a configurable number of 
+simultaneous requests to execute in parallel. The requests are executed from an 
+NSOperationQueue with a configurable number of simultaneous connections.
+
+This class can be useful in throttling the number of requests that are started 
+at a given time. Although the remote data is being fetched asynchronously starting a too 
+greater number of requests will bog down your application.
+
+RCLAsyncImageView and RCLAsyncImageButton rely on this class.
+
+### RCLCache
+A disk cache singleton class that allows storing NSData objects to disk. At the moment 
+there is no way of managing the lifetime of a cached objects but that is a feature that
+is going to be implemented. RCLAsyncImageView/Button can use this cache to load
+images from disk rather than downloading them all together again.
+
+### RCLMemoryCache
+A memory cache singleton class that allows storing objects to memory. RCLAsyncImageView/Button
+can use this memory cache to quickly access objects that are already loaded in memory. This
+can be very useful in implementing fast, lazy-loading table views that need to be 
+high-performance.
+
+Objects stored in the memory cache don't get jettisoned unless manually requested. It is
+recommended that on applicationDidReceiveMemoryWarning the memory cache's removeAllObjects 
+method be called to free up existing objects.

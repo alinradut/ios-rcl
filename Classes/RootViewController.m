@@ -40,7 +40,7 @@
     RCLAsyncImageView *iv = [[RCLAsyncImageView alloc] initWithURL:@"http://www.sandia.gov/media/images/jpg/f4_image1.jpg" temporaryImage:nil];
     iv.frame = CGRectMake(0, 0, 100, 100);
     [cell addSubview:iv];
-    
+    [iv release];
 	// Configure the cell.
 
     return cell;
