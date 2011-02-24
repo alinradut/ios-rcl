@@ -45,4 +45,19 @@
     return nil;
 }
 
+- (void)removeObjectForKeyPath:(NSString *)keyPath {
+    NSAssert(keyPath != nil, @"keyPath must not be nil");
+    NSAssert([keyPath length] != 0, @"keyPath must not be empty");
+    
+    NSString *filePath = [RCL_CACHE_DIRECTORY stringByAppendingPathComponent:[keyPath md5]];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+        if (error != nil) {
+            NSLog(@"Cannot remove item for keyPath %@: %@", keyPath, [error localizedDescription]);
+            [error release];
+        }
+    }
+}
+
 @end

@@ -1,31 +1,27 @@
 //
-//  RCLCache.h
+//  RCLMemoryCache.h
 //  RCL
 //
-//  Created by clw on 2/9/11.
+//  Created by clw on 2/24/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-#define RCL_DOCUMENTS_DIRECTORY [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
-#define RCL_CACHE_DIRECTORY [RCL_DOCUMENTS_DIRECTORY stringByAppendingPathComponent:@"RCLCache"]
-#define RCL_USE_CACHE   1
-
 /*!
- RCLCache is a generic cache manager. 
- 
- Normally you will call the cache manager as a singleton
- using the instance() method.
+ Singleton class that stores objects in memory.
  */
-@interface RCLCache : NSObject {
+@interface RCLMemoryCache : NSObject {
+    //! collection of objects stored in memory
+    NSMutableDictionary *memoryCache_;
 }
 
-//! Shared instance, the preferred way of using the cache manager
-+ (RCLCache *)instance;
+//! shared instance
++ (RCLMemoryCache *)instance;
 
 /*!
  Returns an object stored in the cache or nil if no object was found.
+ @param object NSData representation of an object
  @param keyPath The key path of the object to be retrieved
  */
 - (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath;
@@ -47,5 +43,10 @@
  @param keyPath Key path of object to remove
  */
 - (void)removeObjectForKeyPath:(NSString *)keyPath;
+
+/*!
+ Removes all objects from memory cache
+ */
+- (void)removeAllObjects;
 
 @end
