@@ -40,6 +40,11 @@ An enhanced table view controller that eases the use of often requested enhancem
 * text filtering
 * pagination
 
+### RCLMapController
+
+The RCLMapController allows the display of thousands of POIs at a time without slowing down 
+the app noticeably or ramping up the memory consumption to mem warning levels by clustering the pins together.
+
 ## Backbone classes
 
 The reusable components depend on a number of backbone classes to do their job properly.
