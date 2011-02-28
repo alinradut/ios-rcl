@@ -32,6 +32,7 @@
 		3B918D8713032E7500776B29 /* RCLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8613032E7500776B29 /* RCLCache.m */; };
 		3B918D8A13032EA600776B29 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
 		3B918DA81303343700776B29 /* RCLString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918DA71303343700776B29 /* RCLString.m */; };
+		3B92B5BD131AE1D9007AF47C /* RCLMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B92B5BC131AE1D9007AF47C /* RCLMapController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		3B918D8913032EA600776B29 /* RCLAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncImageView.m; sourceTree = "<group>"; };
 		3B918DA61303343700776B29 /* RCLString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLString.h; sourceTree = "<group>"; };
 		3B918DA71303343700776B29 /* RCLString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLString.m; sourceTree = "<group>"; };
+		3B92B5BB131AE1D9007AF47C /* RCLMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMapController.h; sourceTree = "<group>"; };
+		3B92B5BC131AE1D9007AF47C /* RCLMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMapController.m; sourceTree = "<group>"; };
 		3B9D569113088F590036C804 /* RCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCL.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* RCL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RCL-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +120,8 @@
 				3B9D569113088F590036C804 /* RCL.h */,
 				3B8E32351316FB1200206157 /* RCLMemoryCache.h */,
 				3B8E32361316FB1200206157 /* RCLMemoryCache.m */,
+				3B92B5BB131AE1D9007AF47C /* RCLMapController.h */,
+				3B92B5BC131AE1D9007AF47C /* RCLMapController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				3B918D8713032E7500776B29 /* RCLCache.m in Sources */,
 				3B918D8A13032EA600776B29 /* RCLAsyncImageView.m in Sources */,
 				3B918DA81303343700776B29 /* RCLString.m in Sources */,
+				3B92B5BD131AE1D9007AF47C /* RCLMapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
