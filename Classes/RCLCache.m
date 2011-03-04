@@ -43,7 +43,12 @@
 - (id)init {
     if (self = [super init]) {
         NSString *fileName = [RCL_CACHE_DIRECTORY stringByAppendingPathComponent:@"data.plist"];
-        data_ = [[NSMutableArray alloc] initWithContentsOfFile:fileName];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:fileName]) {
+            data_ = [[NSMutableArray alloc] init];
+        }
+        else {
+            data_ = [[NSMutableArray alloc] initWithContentsOfFile:fileName];
+        }
     }
     return self;
 }
@@ -61,7 +66,7 @@
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                           [keyPath md5],@"hash",expirationDate,@"expirationDate", nil];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hash = %@",[keyPath md5]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hash == %@",[keyPath md5]];
     NSArray *result = [data_ filteredArrayUsingPredicate:predicate];
     
     @synchronized (self) {
@@ -81,14 +86,18 @@
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         return NO;
     }
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hash = %@", [keyPath md5]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hash == %@", [keyPath md5]];
     NSArray *result = [data_ filteredArrayUsingPredicate:predicate];
     if ([result count]) {
         NSDate *expirationDate = [[result objectAtIndex:0] objectForKey:@"expirationDate"];
-        if (![expirationDate laterDate:[NSDate date]]) {
+        if ([expirationDate compare:[NSDate date]] == NSOrderedAscending) {
             return NO;
         }
     }
+    else {
+        return NO;
+    }
+
     return YES;
 }
 
@@ -116,7 +125,7 @@
             [error release];
         }
     }
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hash = %@", [keyPath md5]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hash == %@", [keyPath md5]];
     NSArray *result = [data_ filteredArrayUsingPredicate:predicate];
     
     @synchronized (self) {
