@@ -10,6 +10,10 @@
 #import "RCL.h"
 #import "RCLString.h"
 
+@interface RCLCache()
+- (void)saveData;
+@end
+
 @implementation RCLCache
 
 + (RCLCache *)instance {
@@ -25,8 +29,7 @@
                                                        attributes:nil 
                                                             error:&error];
             if (error != nil) {
-                RCLError(@"An error has occured while creating the cache directory %@: %@", 
-                      RCL_CACHE_DIRECTORY, [error localizedDescription]);
+                RCLError(@"An error has occured while creating the cache directory %@: %@", RCL_CACHE_DIRECTORY, [error localizedDescription]);
                 [error release];
             }
         }  
@@ -109,7 +112,7 @@
         NSError *error = nil;
         [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
         if (error != nil) {
-            RCLWarning(@"Cannot remove item for keyPath %@: %@", keyPath, [error localizedDescription]);
+            RCLWarning(@"Cannot remove item from disk for keyPath %@: %@", keyPath, [error localizedDescription]);
             [error release];
         }
     }
@@ -129,6 +132,27 @@
     @synchronized (self) {
         [data_ writeToFile:[RCL_CACHE_DIRECTORY stringByAppendingPathComponent:@"data.plist"] 
                 atomically:YES];
+    }
+}
+
+- (void)purgeExpiredData {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"expirationDate < %@", [NSDate date]];
+    NSArray *results = [data_ filteredArrayUsingPredicate:predicate];
+    for (NSDictionary *dict in results) {
+        @synchronized (self) {
+            NSString *filePath = [RCL_CACHE_DIRECTORY stringByAppendingPathComponent:[dict valueForKey:@"hash"]];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+                NSError *error = nil;
+                [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+                if (error != nil) {
+                    RCLWarning(@"Cannot remove item from disk for hash %@: %@", 
+                               [dict valueForKey:@"hash"], 
+                               [error localizedDescription]);
+                    [error release];
+                }
+            }
+            [data_ removeObject:dict];
+        }
     }
 }
 

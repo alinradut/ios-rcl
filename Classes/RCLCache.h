@@ -55,4 +55,9 @@
  */
 - (void)removeObjectForKeyPath:(NSString *)keyPath;
 
+/*!
+ Purge the cached files that expired
+ */
+- (void)purgeExpiredData;
+
 @end

@@ -1,4 +1,4 @@
-    //
+//
 //  RCLMapController.m
 //  RCL
 //
@@ -31,7 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (mapView_ == nil) {
-        //mapView_ = [[MKMapView alloc] initWithFrame:self.view];
         mapView_.delegate = self;
     }
     self.pins = [NSMutableArray array];
