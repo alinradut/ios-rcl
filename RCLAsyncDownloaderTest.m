@@ -13,7 +13,7 @@
 
 - (void)testDownload {
     
-    [[RCLAsyncDownloader instance] downloadURL:[NSURL URLWithString:@"http://www.google.com"] 
+    [[RCLAsyncDownloader instance] downloadURL:[NSURL URLWithString:@"http://localhost/~clw/"] 
                                   withDelegate:self];
     executing_ = YES;
     while (executing_) {
@@ -30,7 +30,6 @@
 #pragma mark RCLAsyncDownloaderDelegate
 #pragma mark -
 - (void)downloaderDidDownloadData:(NSData *)data forUrl:(NSURL *)url {
-    NSLog(@"did download data");
     STAssertNotNil(data, @"Data was nil");
     STAssertTrue([data length], @"Data length was 0");
     STAssertNotNil(url, @"URL object was nil");
@@ -38,7 +37,6 @@
 }
 
 - (void)downloaderDidFailWithError:(NSError *)error forUrl:(NSURL *)url {
-    NSLog(@"did fail with error");
     STAssertNotNil(url, @"URL object was nil");
     STAssertTrue(0, @"Download failed");
     executing_ = NO;
