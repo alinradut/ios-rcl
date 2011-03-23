@@ -7,7 +7,7 @@
 //
 
 #import "RCLMemoryCache.h"
-
+#import "RCLString.m"
 
 @implementation RCLMemoryCache
 
@@ -16,10 +16,11 @@
     if (!sharedInstance) {
         sharedInstance = [[RCLMemoryCache alloc] init];
     }
+    return sharedInstance;
 }
 
 - (id)init {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         memoryCache_ = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -52,6 +53,7 @@
 
 - (void)dealloc {
     [memoryCache_ release];
+    [super dealloc];
 }
 
 @end

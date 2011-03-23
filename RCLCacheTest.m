@@ -22,7 +22,7 @@
     [[RCLCache instance] storeData:[storedString dataUsingEncoding:NSUTF8StringEncoding] 
                         forKeyPath:keyPath];
     
-    STAssertTrue([[RCLCache instance] objectForKeyPath:keyPath], @"Stored object cannot be found in cache");
+    STAssertTrue([[RCLCache instance] objectAvailableForKeyPath:keyPath], @"Stored object cannot be found in cache");
 
     NSData *retrievedObject = [[RCLCache instance] objectForKeyPath:keyPath];
     STAssertNotNil(retrievedObject, @"Retrieved object is nil");
