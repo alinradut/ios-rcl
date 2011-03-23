@@ -28,6 +28,10 @@
 		3B0868541315BD460050B886 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B0868561315BD460050B886 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
 		3B502695133A986F00F2A350 /* RCLMemoryCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */; };
+		3B5026AD133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
+		3B5026AE133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
+		3B5026B4133AB13500F2A350 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5026B3133AB13500F2A350 /* QuartzCore.framework */; };
+		3B5026B5133AB15100F2A350 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5026B3133AB13500F2A350 /* QuartzCore.framework */; };
 		3B8E32371316FB1200206157 /* RCLMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E32361316FB1200206157 /* RCLMemoryCache.m */; };
 		3B918D8413032E4200776B29 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B918D8713032E7500776B29 /* RCLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8613032E7500776B29 /* RCLCache.m */; };
@@ -69,6 +73,9 @@
 		3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncDownloaderTest.m; sourceTree = "<group>"; };
 		3B502693133A986F00F2A350 /* RCLMemoryCacheTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCacheTest.h; sourceTree = "<group>"; };
 		3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMemoryCacheTest.m; sourceTree = "<group>"; };
+		3B5026AA133AA7F700F2A350 /* RCLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLTableViewController.h; sourceTree = "<group>"; };
+		3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLTableViewController.m; sourceTree = "<group>"; };
+		3B5026B3133AB13500F2A350 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3B8E32351316FB1200206157 /* RCLMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCache.h; sourceTree = "<group>"; };
 		3B8E32361316FB1200206157 /* RCLMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMemoryCache.m; sourceTree = "<group>"; };
 		3B918D8213032E4200776B29 /* RCLAsyncDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLAsyncDownloader.h; sourceTree = "<group>"; };
@@ -91,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				3B5026B5133AB15100F2A350 /* QuartzCore.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 			);
@@ -100,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5026B4133AB13500F2A350 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +134,8 @@
 				3B8E32361316FB1200206157 /* RCLMemoryCache.m */,
 				3B92B5BB131AE1D9007AF47C /* RCLMapController.h */,
 				3B92B5BC131AE1D9007AF47C /* RCLMapController.m */,
+				3B5026AA133AA7F700F2A350 /* RCLTableViewController.h */,
+				3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B5026B3133AB13500F2A350 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -336,6 +348,7 @@
 				3B918D8A13032EA600776B29 /* RCLAsyncImageView.m in Sources */,
 				3B918DA81303343700776B29 /* RCLString.m in Sources */,
 				3B92B5BD131AE1D9007AF47C /* RCLMapController.m in Sources */,
+				3B5026AD133AA7F700F2A350 /* RCLTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +370,7 @@
 				3B0868431315B8E10050B886 /* RCLAsyncDownloaderTest.m in Sources */,
 				3B8E32371316FB1200206157 /* RCLMemoryCache.m in Sources */,
 				3B502695133A986F00F2A350 /* RCLMemoryCacheTest.m in Sources */,
+				3B5026AE133AA7F700F2A350 /* RCLTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
