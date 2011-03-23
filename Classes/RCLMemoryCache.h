@@ -14,17 +14,27 @@
 @interface RCLMemoryCache : NSObject {
     //! collection of objects stored in memory
     NSMutableDictionary *memoryCache_;
+    NSMutableDictionary *expirationDates_;
 }
 
 //! shared instance
 + (RCLMemoryCache *)instance;
 
 /*!
- Returns an object stored in the cache or nil if no object was found.
+ Stores an object in the memory cache for an indefinite amount of time. 
  @param object NSData representation of an object
  @param keyPath The key path of the object to be retrieved
  */
 - (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath;
+
+/*!
+ Stores an object in the memory cache for an amount of time. 
+ @param object NSData representation of an object
+ @param keyPath The key path of the object to be retrieved
+ @param expirationDate Date when the object is set to expire. 
+    Use [NSDate distantFuture] if you don't want the object to expire
+ */
+- (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath expires:(NSDate *)expirationDate;
 
 /*!
  Checks if an object was stored in the cache for the given keyPath

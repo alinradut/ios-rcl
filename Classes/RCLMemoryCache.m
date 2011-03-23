@@ -22,23 +22,36 @@
 - (id)init {
     if ((self = [super init])) {
         memoryCache_ = [[NSMutableDictionary alloc] init];
+        expirationDates_ = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
 - (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath {
+}
+
+- (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath expires:(NSDate *)expirationDate {
     NSAssert(object != nil, @"object cannot be nil");
     NSAssert([keyPath length], @"keyPath cannot be nil or empty");
+    
     [memoryCache_ setObject:object forKey:[keyPath md5]];
+    
+    NSNumber *expirationTime = [NSNumber numberWithDouble:[expirationDate timeIntervalSinceReferenceDate]];
+    [expirationDates_ setObject:expirationTime forKey:[keyPath md5]];
 }
 
 - (BOOL)objectAvailableForKeyPath:(NSString *)keyPath {
-    NSAssert([keyPath length], @"keyPath cannot be nil or empty");
-    return [memoryCache_ objectForKey:[keyPath md5]] != nil?YES:NO;
+    return [self objectForKeyPath:keyPath]!=nil?YES:NO;
 }
 
 - (NSData *)objectForKeyPath:(NSString *)keyPath {
     NSAssert([keyPath length], @"keyPath cannot be nil or empty");
+    NSNumber *timestamp = [expirationDates_ objectForKey:[keyPath md5]];
+    NSNumber *currentTimestamp = [NSNumber numberWithDouble:[NSDate timeIntervalSinceReferenceDate]];
+    if ([timestamp compare:currentTimestamp] == NSOrderedAscending) {
+        [memoryCache_ removeObjectForKey:[keyPath md5]];
+        return nil;
+    }
     return [memoryCache_ objectForKey:[keyPath md5]];
 }
 
@@ -48,11 +61,13 @@
 }
 
 - (void)removeAllObjects {
+    [expirationDates_ release];
     [memoryCache_ removeAllObjects];
 }
 
 - (void)dealloc {
     [memoryCache_ release];
+    [expirationDates_ release];
     [super dealloc];
 }
 
