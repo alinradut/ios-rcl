@@ -19,16 +19,23 @@
  using the instance() method.
  */
 @interface RCLCache : NSObject {
+    NSMutableArray *data_;
 }
 
 //! Shared instance, the preferred way of using the cache manager
 + (RCLCache *)instance;
 
 /*!
- Returns an object stored in the cache or nil if no object was found.
+ Stores an object in the disk cache
  @param keyPath The key path of the object to be retrieved
  */
 - (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath;
+
+/*!
+ Stores an object in the disk cache with a given expiration date
+ @param keyPath The key path of the object to be retrieved
+ */
+- (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath expires:(NSDate *)expirationDate;
 
 /*!
  Checks if an object was stored in the cache for the given keyPath
@@ -47,5 +54,10 @@
  @param keyPath Key path of object to remove
  */
 - (void)removeObjectForKeyPath:(NSString *)keyPath;
+
+/*!
+ Purge the cached files that expired
+ */
+- (void)purgeExpiredData;
 
 @end

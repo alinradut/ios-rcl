@@ -102,6 +102,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    RCLWarning(@"Connection failed with error: %@", error);
     if ([delegate_ respondsToSelector:@selector(downloaderDidFailWithError:forUrl:)]) {
         [delegate_ performSelector:@selector(downloaderDidFailWithError:forUrl:) 
                         withObject:error 

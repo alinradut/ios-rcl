@@ -46,4 +46,15 @@
     STAssertFalse([[RCLCache instance] objectAvailableForKeyPath:keyPath], @"Stored object was not removed from cache");
 }
 
+- (void)testExpiredCache {
+    NSString *storedString = @"Hello world!";
+    NSString *keyPath = @"&Hd2h378734&$%Y*(&98";
+    
+    [[RCLCache instance] storeData:[storedString dataUsingEncoding:NSUTF8StringEncoding] 
+                        forKeyPath:keyPath
+                           expires:[NSDate dateWithTimeIntervalSinceNow:-1]];
+    
+    STAssertFalse([[RCLCache instance] objectAvailableForKeyPath:keyPath], @"Stored object is still available in cache");
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "RCLAsyncImageView.h"
 #import "RCLAsyncDownloader.h"
+#import "RCL.h"
 
 @implementation RCLAsyncImageView
 @synthesize url = url_;
@@ -58,7 +59,7 @@
 }
 
 - (void)downloaderDidFailWithError:(NSError *)error forUrl:(NSURL *)url {
-    NSLog(@"%@", error);
+
 }
 
 - (void)dealloc {
