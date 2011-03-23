@@ -12,15 +12,18 @@
 @synthesize mapView = mapView_;
 @synthesize pins = pins_;
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+@synthesize latitudeKey = latitudeKey_;
+@synthesize longitudeKey = longitudeKey_;
+@synthesize nameKey = nameKey_;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
+		self.latitudeKey = @"latitude";
+		self.longitudeKey = @"longitude";
+		self.nameKey = @"name";
     }
     return self;
 }
-*/
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -31,8 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (mapView_ == nil) {
-        mapView_ = [[MKMapView alloc] initWithFrame:self.view];
-        mapView_.delegate = self;
+        
     }
     self.pins = [NSMutableArray array];
     
