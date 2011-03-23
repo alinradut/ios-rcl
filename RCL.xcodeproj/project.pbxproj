@@ -27,6 +27,7 @@
 		3B0868431315B8E10050B886 /* RCLAsyncDownloaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */; };
 		3B0868541315BD460050B886 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B0868561315BD460050B886 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
+		3B502695133A986F00F2A350 /* RCLMemoryCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */; };
 		3B8E32371316FB1200206157 /* RCLMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E32361316FB1200206157 /* RCLMemoryCache.m */; };
 		3B918D8413032E4200776B29 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B918D8713032E7500776B29 /* RCLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8613032E7500776B29 /* RCLCache.m */; };
@@ -66,6 +67,8 @@
 		3B07FE4A1313265100CE0476 /* GTMUnitTestDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMUnitTestDevLog.m; path = "../Frameworks/google-toolbox-for-mac/UnitTesting/GTMUnitTestDevLog.m"; sourceTree = SOURCE_ROOT; };
 		3B0868411315B8E10050B886 /* RCLAsyncDownloaderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLAsyncDownloaderTest.h; sourceTree = "<group>"; };
 		3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncDownloaderTest.m; sourceTree = "<group>"; };
+		3B502693133A986F00F2A350 /* RCLMemoryCacheTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCacheTest.h; sourceTree = "<group>"; };
+		3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMemoryCacheTest.m; sourceTree = "<group>"; };
 		3B8E32351316FB1200206157 /* RCLMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCache.h; sourceTree = "<group>"; };
 		3B8E32361316FB1200206157 /* RCLMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMemoryCache.m; sourceTree = "<group>"; };
 		3B918D8213032E4200776B29 /* RCLAsyncDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLAsyncDownloader.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				3B07FE011313231900CE0476 /* RCLCacheTest.m */,
 				3B0868411315B8E10050B886 /* RCLAsyncDownloaderTest.h */,
 				3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */,
+				3B502693133A986F00F2A350 /* RCLMemoryCacheTest.h */,
+				3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				3B07FE4B1313265100CE0476 /* GTMUnitTestDevLog.m in Sources */,
 				3B0868431315B8E10050B886 /* RCLAsyncDownloaderTest.m in Sources */,
 				3B8E32371316FB1200206157 /* RCLMemoryCache.m in Sources */,
+				3B502695133A986F00F2A350 /* RCLMemoryCacheTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

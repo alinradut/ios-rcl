@@ -28,6 +28,7 @@
 }
 
 - (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath {
+    [self storeData:object forKeyPath:keyPath expires:[NSDate distantFuture]];
 }
 
 - (void)storeData:(NSData *)object forKeyPath:(NSString *)keyPath expires:(NSDate *)expirationDate {
