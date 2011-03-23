@@ -61,4 +61,13 @@
     STAssertFalse([[RCLMemoryCache instance] objectAvailableForKeyPath:keyPath], @"Stored object is still available in cache after expiration date");
 }
 
+- (void)testEmptyCache {
+    NSString *storedString = @"Hello world!";
+    NSString *keyPath = @"&Hd2h378734&$%Y*(&98";
+    
+    [[RCLMemoryCache instance] storeData:[storedString dataUsingEncoding:NSUTF8StringEncoding] 
+                              forKeyPath:keyPath];
+    [[RCLMemoryCache instance] removeAllObjects];
+    STAssertFalse([[RCLMemoryCache instance] objectAvailableForKeyPath:keyPath], @"Stored object is still available in cache after cache was emptied");
+}
 @end

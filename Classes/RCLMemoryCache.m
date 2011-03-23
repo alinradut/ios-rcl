@@ -47,7 +47,8 @@
 
 - (NSData *)objectForKeyPath:(NSString *)keyPath {
     NSAssert([keyPath length], @"keyPath cannot be nil or empty");
-    NSNumber *timestamp = [expirationDates_ objectForKey:[keyPath md5]];
+    NSNumber *timestamp = 
+    [expirationDates_ objectForKey:[keyPath md5]];
     NSNumber *currentTimestamp = [NSNumber numberWithDouble:[NSDate timeIntervalSinceReferenceDate]];
     if ([timestamp compare:currentTimestamp] == NSOrderedAscending) {
         [memoryCache_ removeObjectForKey:[keyPath md5]];
@@ -62,13 +63,13 @@
 }
 
 - (void)removeAllObjects {
-    [expirationDates_ release];
+    [expirationDates_ removeAllObjects];
     [memoryCache_ removeAllObjects];
 }
 
 - (void)dealloc {
-    [memoryCache_ release];
     [expirationDates_ release];
+    [memoryCache_ release];
     [super dealloc];
 }
 
