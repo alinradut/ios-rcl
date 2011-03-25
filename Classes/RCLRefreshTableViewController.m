@@ -102,11 +102,11 @@
     isDragging_ = NO;
     if (scrollView.contentOffset.y <= -kRCLRefreshHeaderHeight) {
         // Released above the header
-        [self startLoading];
+        [self startRefreshingDataSource];
     }
 }
 
-- (void)startLoading {
+- (void)startRefreshingDataSource {
     isLoading_ = YES;
     
     // Show the header
@@ -119,7 +119,7 @@
     [UIView commitAnimations];
 }
 
-- (void)stopLoading {
+- (void)endDataSourceRefresh {
     isLoading_ = NO;
     
     // Hide the header
@@ -140,7 +140,7 @@
 }
 
 - (void)refresh {
-    [self startLoading];
+    [self startRefreshingDataSource];
 }
 
 #pragma -

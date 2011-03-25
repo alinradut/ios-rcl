@@ -8,11 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+#define kRCLTableViewResultsPerPage 10
+
 /*!
  RCLTableViewController enhances the default table view controller
  with pagination and other functionality 
  */
 @interface RCLTableViewController : UITableViewController {
+    NSMutableArray *dataSource_;
+    NSInteger totalResults_;
+    NSInteger resultsPerPage_;
+    BOOL isLoadingNextPage_;
+    BOOL morePagesAreAvailable_;
+    
+    UIView *loadingView_;
 }
+
+@property (nonatomic, retain) NSMutableArray *dataSource;
 
 @end

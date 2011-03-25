@@ -40,7 +40,7 @@
 @property (nonatomic, copy) NSString *textRelease;
 @property (nonatomic, copy) NSString *textLoading;
 
-- (void)startLoading;
-- (void)stopLoading;
+- (void)startRefreshingDataSource;
+- (void)endDataSourceRefresh;
 
 @end
