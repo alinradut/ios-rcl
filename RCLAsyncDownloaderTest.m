@@ -13,7 +13,7 @@
 
 - (void)testDownload {
     
-    [[RCLAsyncDownloader instance] downloadURL:[NSURL URLWithString:@"http://localhost/~clw/"] 
+    [[RCLAsyncDownloader instance] downloadURL:[NSURL URLWithString:@"http://www.example.com/"] 
                                   withDelegate:self];
     executing_ = YES;
     while (executing_) {
