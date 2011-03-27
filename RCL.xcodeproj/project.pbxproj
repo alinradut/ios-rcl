@@ -35,6 +35,7 @@
 		3B814C2F133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */; };
 		3B814C30133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */; };
 		3B8E32371316FB1200206157 /* RCLMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E32361316FB1200206157 /* RCLMemoryCache.m */; };
+		3B9148D3133DE24F004C185F /* RCLTVCExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9148D2133DE24F004C185F /* RCLTVCExample.m */; };
 		3B918D8413032E4200776B29 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B918D8713032E7500776B29 /* RCLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8613032E7500776B29 /* RCLCache.m */; };
 		3B918D8A13032EA600776B29 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
@@ -82,6 +83,8 @@
 		3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLRefreshTableViewController.m; sourceTree = "<group>"; };
 		3B8E32351316FB1200206157 /* RCLMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCache.h; sourceTree = "<group>"; };
 		3B8E32361316FB1200206157 /* RCLMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMemoryCache.m; sourceTree = "<group>"; };
+		3B9148D1133DE24F004C185F /* RCLTVCExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLTVCExample.h; sourceTree = "<group>"; };
+		3B9148D2133DE24F004C185F /* RCLTVCExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLTVCExample.m; sourceTree = "<group>"; };
 		3B918D8213032E4200776B29 /* RCLAsyncDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLAsyncDownloader.h; sourceTree = "<group>"; };
 		3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncDownloader.m; sourceTree = "<group>"; };
 		3B918D8513032E7500776B29 /* RCLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLCache.h; sourceTree = "<group>"; };
@@ -159,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				3B07FD3C13131A4900CE0476 /* Unit Testing */,
+				3B9148D0133DE217004C185F /* Examples */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -230,6 +234,15 @@
 				3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		3B9148D0133DE217004C185F /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				3B9148D1133DE24F004C185F /* RCLTVCExample.h */,
+				3B9148D2133DE24F004C185F /* RCLTVCExample.m */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		3B918DA91303344000776B29 /* Categories */ = {
@@ -356,6 +369,7 @@
 				3B92B5BD131AE1D9007AF47C /* RCLMapController.m in Sources */,
 				3B5026AD133AA7F700F2A350 /* RCLTableViewController.m in Sources */,
 				3B814C2F133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */,
+				3B9148D3133DE24F004C185F /* RCLTVCExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

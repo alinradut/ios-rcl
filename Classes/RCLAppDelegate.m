@@ -7,7 +7,7 @@
 //
 
 #import "RCLAppDelegate.h"
-#import "RootViewController.h"
+#import "RCLTVCExample.h"
 
 
 @implementation RCLAppDelegate
