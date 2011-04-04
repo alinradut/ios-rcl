@@ -22,6 +22,8 @@ This class depends on the *RCLAsyncDownloader* class to download the image data.
 
 ### RCLAsyncImageButton
 
+*not implemented yet*
+
 A button class that can load its state-dependent images from remote URLs. This class is similar in dependencies with the RCLAsyncImageView class.
 
 ### RCLGallery
@@ -30,17 +32,28 @@ A gallery class that allows the user to browse through a list of images.
 
 ### RCLImageViewer
 
+*not implemented yet*
+
 A full screen image viewer similar to the default image library viewer from iOS.
 
 ### RCLTableViewController
 
 An enhanced table view controller that eases the use of often requested enhancements: 
 
-* pull to refresh
-* text filtering
 * pagination
+* text filtering
+* basic NSArray data source
+* indexed sections
 
-### RCLMapController
+The pagination functionality may be stripped out of this view controller and implemented in a separate class which extends RCLTVC.
+
+### RCLRefreshTableViewController
+
+An enhanced table view controller that implements pull to refresh functionality.
+
+### RCLMapController 
+
+*not implemented yet *
 
 The RCLMapController allows the display of thousands of POIs at a time without slowing down 
 the app noticeably or ramping up the memory consumption to mem warning levels by clustering the pins together.
