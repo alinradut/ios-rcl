@@ -9,7 +9,7 @@
 #import "RCLRefreshTableViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface RCLTableViewController (Private)
+@interface RCLRefreshTableViewController (Private)
 - (void)addRefreshHeaderView;
 @end
 
@@ -21,7 +21,7 @@
 @synthesize textRelease = textRelease_;
 
 - (void)viewDidLoad {
-    
+    [super viewDidLoad];
     self.textPull = @"Pull down to refresh...";
     self.textRelease = @"Release to refresh...";
     self.textLoading = @"Loading...";
@@ -71,12 +71,12 @@
 #pragma Pull to refresh functionality
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if (isLoading_) return;
+    if (isReloading_) return;
     isDragging_ = YES;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (isLoading_) {
+    if (isReloading_) {
         // Update the content inset, good for section headers
         if (scrollView.contentOffset.y > 0)
             self.tableView.contentInset = UIEdgeInsetsZero;
@@ -98,16 +98,16 @@
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (isLoading_) return;
+    if (isReloading_) return;
     isDragging_ = NO;
     if (scrollView.contentOffset.y <= -kRCLRefreshHeaderHeight) {
         // Released above the header
-        [self startRefreshingDataSource];
+        [self startReloadingResults];
     }
 }
 
-- (void)startRefreshingDataSource {
-    isLoading_ = YES;
+- (void)startReloadingResults {
+    isReloading_ = YES;
     
     // Show the header
     [UIView beginAnimations:nil context:NULL];
@@ -119,8 +119,8 @@
     [UIView commitAnimations];
 }
 
-- (void)endDataSourceRefresh {
-    isLoading_ = NO;
+- (void)didEndReloadingResults {
+    isReloading_ = NO;
     
     // Hide the header
     [UIView beginAnimations:nil context:NULL];
@@ -140,12 +140,13 @@
 }
 
 - (void)refresh {
-    [self startRefreshingDataSource];
+    [self startReloadingResults];
 }
 
 #pragma -
 #pragma Memory management
 - (void)viewDidUnload {
+    [super viewDidUnload];
     // clean up work that has been done in the viewDidLoad method
     if (refreshHeaderView_) {
         [refreshHeaderView_ removeFromSuperview];

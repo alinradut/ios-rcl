@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCLTableViewController.h"
 
 /*!
  The RCLRefreshTableViewController adds pull to refresh functionality
- to the RCLTableViewController. It is basically Leah Culver's PTR TVC
+ to the UITableViewController. It is basically Leah Culver's PTR TVC
  modified to fit the RCL coding style and fixed in a couple of places.
  
  Based on PullRefreshTableViewController.h - Plancast
@@ -19,7 +18,7 @@
  Copyright (c) 2010 Leah Culver
  https://github.com/leah/PullToRefresh
  */
-@interface RCLRefreshTableViewController : RCLTableViewController {
+@interface RCLRefreshTableViewController : UITableViewController {
     UIView *refreshHeaderView_;
     UILabel *refreshLabel_;
     UILabel *lastRefreshLabel_;
@@ -27,7 +26,7 @@
     UIActivityIndicatorView *refreshSpinner_;
     
     BOOL isDragging_;
-    BOOL isLoading_;
+    BOOL isReloading_;
     
     NSString *textPull_;
     NSString *textRelease_;
@@ -40,7 +39,17 @@
 @property (nonatomic, copy) NSString *textRelease;
 @property (nonatomic, copy) NSString *textLoading;
 
-- (void)startRefreshingDataSource;
-- (void)endDataSourceRefresh;
+/*!
+ This method is called when the user has completed a PTR gesture.
+ The table view controller should override this method and start loading data 
+ in background
+ */
+- (void)startReloadingResults;
+
+/*!
+ This method must be called manually after the reload of the data has been
+ completed.
+ */
+- (void)didEndReloadingResults;
 
 @end

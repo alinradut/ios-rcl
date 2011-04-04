@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RCLTableViewController.h"
-@interface RootViewController : RCLTableViewController {
+#import "RCLRefreshTableViewController.h"
+@interface RootViewController : RCLRefreshTableViewController {
 }
 
 @end

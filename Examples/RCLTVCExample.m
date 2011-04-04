@@ -16,6 +16,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self addNames];
     [self addNames];
     [self addNames];

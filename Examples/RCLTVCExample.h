@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCLTableViewController.h"
-@class RCLTableViewController;
-@interface RCLTVCExample : RCLTableViewController {
+#import "RCLRefreshTableViewController.h"
+
+@interface RCLTVCExample : RCLRefreshTableViewController {
     NSArray *names_;
 }
 
