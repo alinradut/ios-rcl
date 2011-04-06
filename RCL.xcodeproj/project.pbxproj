@@ -34,6 +34,9 @@
 		3B5026B5133AB15100F2A350 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5026B3133AB13500F2A350 /* QuartzCore.framework */; };
 		3B814C2F133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */; };
 		3B814C30133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */; };
+		3B82A00B134CFD3C00C06671 /* RCLMVCExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82A009134CFD3C00C06671 /* RCLMVCExample.m */; };
+		3B82A00C134CFD3C00C06671 /* RCLMVCExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B82A00A134CFD3C00C06671 /* RCLMVCExample.xib */; };
+		3B82A00F134CFD7900C06671 /* RCLMVCExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B82A00E134CFD7900C06671 /* RCLMVCExample.xib */; };
 		3B8C57A9134A5DFB00A2DABF /* RCLMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */; };
 		3B8C57AA134A5DFB00A2DABF /* RCLMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */; };
 		3B8C57AD134A5E4700A2DABF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8C57AC134A5E4700A2DABF /* MapKit.framework */; };
@@ -84,6 +87,10 @@
 		3B5026B3133AB13500F2A350 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3B814C2D133D3FDA00EAB1F1 /* RCLRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLRefreshTableViewController.h; sourceTree = "<group>"; };
 		3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLRefreshTableViewController.m; sourceTree = "<group>"; };
+		3B82A008134CFD3C00C06671 /* RCLMVCExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMVCExample.h; sourceTree = "<group>"; };
+		3B82A009134CFD3C00C06671 /* RCLMVCExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMVCExample.m; sourceTree = "<group>"; };
+		3B82A00A134CFD3C00C06671 /* RCLMVCExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCLMVCExample.xib; sourceTree = "<group>"; };
+		3B82A00E134CFD7900C06671 /* RCLMVCExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCLMVCExample.xib; sourceTree = "<group>"; };
 		3B8C57A7134A5DFA00A2DABF /* RCLMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMapPin.h; sourceTree = "<group>"; };
 		3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMapPin.m; sourceTree = "<group>"; };
 		3B8C57AC134A5E4700A2DABF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -197,6 +204,7 @@
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* RCL-Info.plist */,
+				3B82A00E134CFD7900C06671 /* RCLMVCExample.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -251,6 +259,9 @@
 			children = (
 				3B9148D1133DE24F004C185F /* RCLTVCExample.h */,
 				3B9148D2133DE24F004C185F /* RCLTVCExample.m */,
+				3B82A008134CFD3C00C06671 /* RCLMVCExample.h */,
+				3B82A009134CFD3C00C06671 /* RCLMVCExample.m */,
+				3B82A00A134CFD3C00C06671 /* RCLMVCExample.xib */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -335,6 +346,8 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				3B82A00C134CFD3C00C06671 /* RCLMVCExample.xib in Resources */,
+				3B82A00F134CFD7900C06671 /* RCLMVCExample.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +394,7 @@
 				3B814C2F133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */,
 				3B9148D3133DE24F004C185F /* RCLTVCExample.m in Sources */,
 				3B8C57A9134A5DFB00A2DABF /* RCLMapPin.m in Sources */,
+				3B82A00B134CFD3C00C06671 /* RCLMVCExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

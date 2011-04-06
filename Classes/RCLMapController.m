@@ -11,6 +11,7 @@
 @implementation RCLMapController
 @synthesize mapView = mapView_;
 @synthesize pins = pins_;
+@synthesize dataSource = dataSource_;
 
 @synthesize latitudeKey = latitudeKey_;
 @synthesize longitudeKey = longitudeKey_;
@@ -21,23 +22,15 @@
 		self.latitudeKey = @"latitude";
 		self.longitudeKey = @"longitude";
 		self.nameKey = @"name";
+        self.pins = [NSMutableArray array];
+        self.dataSource = [NSMutableArray array];
+        mapView_.delegate = self;
     }
     return self;
 }
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (mapView_ == nil) {
-        mapView_.delegate = self;
-    }
-    self.pins = [NSMutableArray array];
-    
 }
 
 #pragma mark -
@@ -48,11 +41,12 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    self.mapView = nil;
-    self.pins = nil;
 }
 
 - (void)dealloc {
+    self.mapView = nil;
+    self.pins = nil;
+    self.dataSource = nil;
     [super dealloc];
 }
 

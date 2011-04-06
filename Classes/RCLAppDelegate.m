@@ -7,7 +7,7 @@
 //
 
 #import "RCLAppDelegate.h"
-#import "RCLTVCExample.h"
+#import "RCLMVCExample.h"
 
 
 @implementation RCLAppDelegate
@@ -26,7 +26,9 @@
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
-
+    UIViewController *c = [[[RCLMVCExample alloc] initWithNibName:@"RCLMVCExample" bundle:nil] autorelease];
+    
+    [navigationController setViewControllers:[NSArray arrayWithObject:c]];
     return YES;
 }
 
