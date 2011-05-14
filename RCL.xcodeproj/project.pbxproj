@@ -27,6 +27,7 @@
 		3B0868431315B8E10050B886 /* RCLAsyncDownloaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */; };
 		3B0868541315BD460050B886 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B0868561315BD460050B886 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
+		3B0DC6F6137BF0AD0082D297 /* RCLResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B0DC6F5137BF0AD0082D297 /* RCLResources.bundle */; };
 		3B502695133A986F00F2A350 /* RCLMemoryCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */; };
 		3B5026AD133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
 		3B5026AE133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
@@ -38,7 +39,6 @@
 		3B82A00C134CFD3C00C06671 /* RCLMVCExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B82A00A134CFD3C00C06671 /* RCLMVCExample.xib */; };
 		3B82A00F134CFD7900C06671 /* RCLMVCExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B82A00E134CFD7900C06671 /* RCLMVCExample.xib */; };
 		3B8955B9137B23BF00144EC5 /* RCLBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8955B7137B23BF00144EC5 /* RCLBrowser.m */; };
-		3B8955BA137B23BF00144EC5 /* RCLBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8955B8137B23BF00144EC5 /* RCLBrowser.xib */; };
 		3B8C57A9134A5DFB00A2DABF /* RCLMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */; };
 		3B8C57AA134A5DFB00A2DABF /* RCLMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */; };
 		3B8C57AD134A5E4700A2DABF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8C57AC134A5E4700A2DABF /* MapKit.framework */; };
@@ -82,6 +82,7 @@
 		3B07FE4A1313265100CE0476 /* GTMUnitTestDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMUnitTestDevLog.m; path = "../Frameworks/google-toolbox-for-mac/UnitTesting/GTMUnitTestDevLog.m"; sourceTree = SOURCE_ROOT; };
 		3B0868411315B8E10050B886 /* RCLAsyncDownloaderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLAsyncDownloaderTest.h; sourceTree = "<group>"; };
 		3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncDownloaderTest.m; sourceTree = "<group>"; };
+		3B0DC6F5137BF0AD0082D297 /* RCLResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RCLResources.bundle; sourceTree = "<group>"; };
 		3B502693133A986F00F2A350 /* RCLMemoryCacheTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCacheTest.h; sourceTree = "<group>"; };
 		3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMemoryCacheTest.m; sourceTree = "<group>"; };
 		3B5026AA133AA7F700F2A350 /* RCLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLTableViewController.h; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		3B82A00E134CFD7900C06671 /* RCLMVCExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCLMVCExample.xib; sourceTree = "<group>"; };
 		3B8955B6137B23BF00144EC5 /* RCLBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLBrowser.h; sourceTree = "<group>"; };
 		3B8955B7137B23BF00144EC5 /* RCLBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLBrowser.m; sourceTree = "<group>"; };
-		3B8955B8137B23BF00144EC5 /* RCLBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCLBrowser.xib; sourceTree = "<group>"; };
 		3B8C57A7134A5DFA00A2DABF /* RCLMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMapPin.h; sourceTree = "<group>"; };
 		3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMapPin.m; sourceTree = "<group>"; };
 		3B8C57AC134A5E4700A2DABF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -168,7 +168,6 @@
 				3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */,
 				3B8955B6137B23BF00144EC5 /* RCLBrowser.h */,
 				3B8955B7137B23BF00144EC5 /* RCLBrowser.m */,
-				3B8955B8137B23BF00144EC5 /* RCLBrowser.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -185,6 +184,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				3B0DC6F5137BF0AD0082D297 /* RCLResources.bundle */,
 				3B07FD3C13131A4900CE0476 /* Unit Testing */,
 				3B9148D0133DE217004C185F /* Examples */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -356,7 +356,7 @@
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				3B82A00C134CFD3C00C06671 /* RCLMVCExample.xib in Resources */,
 				3B82A00F134CFD7900C06671 /* RCLMVCExample.xib in Resources */,
-				3B8955BA137B23BF00144EC5 /* RCLBrowser.xib in Resources */,
+				3B0DC6F6137BF0AD0082D297 /* RCLResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

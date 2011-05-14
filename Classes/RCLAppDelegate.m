@@ -8,7 +8,7 @@
 
 #import "RCLAppDelegate.h"
 #import "RCLMVCExample.h"
-
+#import "RCLBrowser.h"
 
 @implementation RCLAppDelegate
 
@@ -26,7 +26,8 @@
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
-    UIViewController *c = [[[RCLMVCExample alloc] initWithNibName:@"RCLMVCExample" bundle:nil] autorelease];
+    RCLBrowser *c = [[[RCLBrowser alloc] init] autorelease];
+    [c loadUrl:[NSURL URLWithString:@"http://www.reddit.com"]];
     
     [navigationController setViewControllers:[NSArray arrayWithObject:c]];
     return YES;

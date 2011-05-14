@@ -38,6 +38,11 @@
 - (void)cancelDownloadForURL:(NSURL *)url delegate:(id)delegate;
 
 /*!
+ Cancel downloads for specified delegate
+ */
+- (void)cancelDownloadsForDelegate:(id)delegate;
+
+/*!
  Kill the current singleton instance. 
  This method should be called in situations of low memory warnings.
  The singleton instance will be re-created when the next call to 

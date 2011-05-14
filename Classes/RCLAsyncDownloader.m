@@ -131,6 +131,14 @@
     }
 }
 
+- (void)cancelDownloadForDelegate:(id)delegate {
+    if (![self isCancelled]
+        && ![self isFinished]
+        && [delegate_ isEqual:delegate]) {
+        [self cancel];
+    }
+}
+
 - (void)cancel {
     if (connection_ != nil) {
         [connection_ cancel];
@@ -210,6 +218,11 @@
     NSDictionary *obj = [NSDictionary dictionaryWithObjectsAndKeys:url,@"url",delegate,@"delegate", nil];
     [[queue_ operations] makeObjectsPerformSelector:@selector(cancelDownload:) 
                                          withObject:obj];
+}
+
+- (void)cancelDownloadsForDelegate:(id)delegate {
+    [[queue_ operations] makeObjectsPerformSelector:@selector(cancelDownloadForDelegate:) 
+                                         withObject:delegate];
 }
 
 #pragma mark -
