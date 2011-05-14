@@ -44,7 +44,7 @@
     lastRefreshLabel_.textAlignment = UITextAlignmentCenter;
     lastRefreshLabel_.text = @"Last refreshed: ";
     
-    refreshArrow_ = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
+    refreshArrow_ = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"RCLResources.bundle/arrow.png"]];
     refreshArrow_.frame = CGRectMake((kRCLRefreshHeaderHeight - 27) / 2,
                                      (kRCLRefreshHeaderHeight - 44) / 2,
                                      27, 44);
@@ -88,10 +88,12 @@
         if (scrollView.contentOffset.y < -kRCLRefreshHeaderHeight) {
             // User is scrolling above the header
             refreshLabel_.text = self.textRelease;
-            [refreshArrow_ layer].transform = CATransform3DMakeRotation(M_PI, 0, 0, 1);
+            //[refreshArrow_ layer].transform = CATransform3DMakeRotation(M_PI, 0, 0, 1);
+            refreshArrow_.transform = CGAffineTransformMakeRotation(M_PI);
         } else { // User is scrolling somewhere within the header
             refreshLabel_.text = self.textPull;
-            [refreshArrow_ layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
+            //[refreshArrow_ layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
+            refreshArrow_.transform = CGAffineTransformMakeRotation(M_PI * 2);
         }
         [UIView commitAnimations];
     }
@@ -128,7 +130,8 @@
     [UIView setAnimationDuration:0.3];
     [UIView setAnimationDidStopSelector:@selector(stopLoadingComplete:finished:context:)];
     self.tableView.contentInset = UIEdgeInsetsZero;
-    [refreshArrow_ layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
+    //[refreshArrow_ layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
+    refreshArrow_.transform = CGAffineTransformMakeRotation(M_PI * 2);
     [UIView commitAnimations];
 }
 

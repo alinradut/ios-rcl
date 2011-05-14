@@ -8,6 +8,7 @@
 
 #import "RCLAppDelegate.h"
 #import "RCLMVCExample.h"
+#import "RCLRefreshTableViewController.h"
 #import "RCLBrowser.h"
 
 @implementation RCLAppDelegate
@@ -26,8 +27,7 @@
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
-    RCLBrowser *c = [[[RCLBrowser alloc] init] autorelease];
-    [c loadUrl:[NSURL URLWithString:@"http://www.reddit.com"]];
+    RCLRefreshTableViewController *c = [[[RCLRefreshTableViewController alloc] init] autorelease];
     
     [navigationController setViewControllers:[NSArray arrayWithObject:c]];
     return YES;
