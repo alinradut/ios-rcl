@@ -8,6 +8,7 @@
 
 #import "RCLAppDelegate.h"
 #import "RCLMVCExample.h"
+#import "RCLTVCExample.h"
 #import "RCLRefreshTableViewController.h"
 #import "RCLBrowser.h"
 
@@ -27,7 +28,7 @@
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
-    RCLRefreshTableViewController *c = [[[RCLRefreshTableViewController alloc] init] autorelease];
+    RCLTVCExample *c = [[[RCLTVCExample alloc] init] autorelease];
     
     [navigationController setViewControllers:[NSArray arrayWithObject:c]];
     return YES;

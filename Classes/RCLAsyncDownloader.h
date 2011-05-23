@@ -10,7 +10,7 @@
 #import "RCL.h"
 
 #define RCL_MAX_CONCURRENT_DOWNLOADS    10
-#define RCL_ASNC_DOWNLOADER_USE_CACHE   1
+#define RCL_ASYNC_DOWNLOADER_ENABLE_CACHE   1
 
 @interface RCLAsyncDownloader : NSObject {
 @private
@@ -31,6 +31,12 @@
  Downloads an NSData object from the URL and passes it to the specified delegate.
  */
 - (void)downloadURL:(NSURL *)url withDelegate:(id<RCLAsyncDownloaderDelegate>)delegate;
+
+/*!
+ Downloads an NSData object from the URL and passes it to the specified delegate.
+ If useCache is YES and the object has already be downloaded, the cached version will be returned.
+ */
+- (void)downloadURL:(NSURL *)url withDelegate:(id<RCLAsyncDownloaderDelegate>)delegate useCache:(BOOL)useCache customHeaders:(NSDictionary *)customHeaders;
 
 /*!
  Cancel download for specified URL

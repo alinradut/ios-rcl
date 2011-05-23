@@ -40,5 +40,6 @@
  Start downloading the remote image
  */
 - (void)startDownload;
+- (void)cancelDownload;
 
 @end

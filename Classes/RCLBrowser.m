@@ -20,7 +20,8 @@
         
         self.webView = [[[UIWebView alloc] init] autorelease];
         webView_.delegate = self;
-        
+        webView_.scalesPageToFit = YES;
+
         self.indicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
         
         indicator_.hidesWhenStopped = YES;    

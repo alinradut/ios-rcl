@@ -10,25 +10,35 @@
 
 @implementation RCLTableViewController
 @synthesize dataSource = dataSource_;
+@synthesize lastRefreshDate = lastRefreshDate_;
+@synthesize tableView = tableView_;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (dataSource_ == nil) {
         self.dataSource = [NSMutableArray array];
     }
+
+    if (tableView_ == nil) {
+        tableView_ = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        tableView_.delegate = self;
+        tableView_.dataSource = self;
+        [self.view addSubview:tableView_];
+    }
+
     if (loadingView_ == nil) {
         loadingView_ = [[UIView alloc] initWithFrame:CGRectMake(0, self.tableView.frame.origin.y + self.tableView.frame.size.height - 18, self.tableView.frame.size.width, 18)];
-        loadingView_.backgroundColor = [UIColor colorWithRed:.2 green:.2 blue:.2 alpha:.7];
+        loadingView_.backgroundColor = [UIColor colorWithRed:.3 green:.3 blue:.3 alpha:.8];
         loadingView_.alpha = 1;
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, loadingView_.frame.size.width, loadingView_.frame.size.height)];
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, loadingView_.frame.size.width, loadingView_.frame.size.height)] autorelease];
         label.textAlignment = UITextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
         label.font = [UIFont systemFontOfSize:13];
-        label.text = @"Loading more results...";
+        label.text = @"Loading results...";
         
-        UIActivityIndicatorView *paginationSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        UIActivityIndicatorView *paginationSpinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
         paginationSpinner.tag = 1;
 
         CGRect frame = paginationSpinner.frame;
@@ -43,16 +53,18 @@
 }
 
 - (void)startLoadingResults:(NSInteger)resultsCount fromIndex:(NSInteger)fromIndex {
-    if (![loadingView_ superview]) {
-        CGRect frame = CGRectMake(0, self.tableView.frame.origin.y + self.tableView.frame.size.height - 18, self.tableView.frame.size.width, 18);
+    if (isLoadingNextPage_) {
+        return;
+    }
+    isLoadingNextPage_ = YES;
+    if (self.tableView.superview) {
+        CGPoint positionInWindow = [self.tableView.superview convertPoint:self.tableView.frame.origin toView:self.navigationController.view];
+        CGRect frame = CGRectMake(0, positionInWindow.y + self.tableView.frame.size.height - 18, self.tableView.frame.size.width, 18);
         loadingView_.frame = frame;
-        // attach the loading view to the table's superview
-        // to allow the table to scroll while the loading view stays fixed
-        [self.tableView.superview addSubview:loadingView_];
+        [self.navigationController.view addSubview:loadingView_];
     }
     [(UIActivityIndicatorView *)[loadingView_ viewWithTag:1] startAnimating];
     
-    isLoadingNextPage_ = YES;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:.5];
     loadingView_.alpha = 1;
@@ -60,34 +72,46 @@
 }
 
 - (void)didEndLoadingResults:(NSInteger)resultsCount fromIndex:(NSInteger)fromIndex {
-    [self.tableView beginUpdates];
-    
-    NSMutableArray *indexes = [NSMutableArray array];
-    for (int i=fromIndex; i<fromIndex + resultsCount; i++) {
-        [indexes addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-    }
-    
-    [self.tableView insertRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationRight];
-    [self.tableView endUpdates];
-
     [(UIActivityIndicatorView *)[loadingView_ viewWithTag:1] stopAnimating];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:.5];
     loadingView_.alpha = 0;
     [UIView commitAnimations];
     isLoadingNextPage_ = NO;
+    self.lastRefreshDate = [NSDate date];
+    [self.tableView reloadData];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (![dataSource_ count]) {
+        return;
+    }
     NSArray *indexPaths = [self.tableView indexPathsForVisibleRows];
     
     if ([indexPaths count]) {
         NSIndexPath *indexPath = [indexPaths objectAtIndex:[indexPaths count]-1];
         
         if (indexPath.row >= [dataSource_ count] - 5) {
-            if (!isLoadingNextPage_) {
+            if (!isLoadingNextPage_ && morePagesAreAvailable_) {
                 [self startLoadingResults:kRCLTableViewResultsPerPage fromIndex:[dataSource_ count]];
             }
+        }
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSArray *visibleCells = [self.tableView visibleCells];
+    for (UITableViewCell *cell in visibleCells) {
+        if ([cell respondsToSelector:@selector(loadPicture)]) {
+            [cell performSelector:@selector(loadPicture)];
         }
     }
 }
@@ -95,6 +119,7 @@
 - (void)viewDidUnload {
     [loadingView_ release];
     loadingView_ = nil;
+    self.tableView = nil;
 }
 
 - (void)dealloc {

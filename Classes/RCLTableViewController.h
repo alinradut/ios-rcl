@@ -14,12 +14,15 @@
  RCLTableViewController enhances the default table view controller
  with pagination and other functionality 
  */
-@interface RCLTableViewController : UITableViewController {
+@interface RCLTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSMutableArray *dataSource_;
     NSInteger totalResults_;
     NSInteger resultsPerPage_;
     BOOL isLoadingNextPage_;
     BOOL morePagesAreAvailable_;
+    NSDate *lastRefreshDate_;
+    BOOL reloadDataWhenStoppedDecelerating_;
+    UITableView *tableView_;
     /*!
      The 'loading more results' loading view
      */
@@ -27,6 +30,8 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *dataSource;
+@property (nonatomic, retain) NSDate *lastRefreshDate;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 /*!
  This method is called when a new page of data is needed.

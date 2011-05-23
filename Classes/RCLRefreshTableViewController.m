@@ -44,7 +44,7 @@
     lastRefreshLabel_.textAlignment = UITextAlignmentCenter;
     lastRefreshLabel_.text = @"Last refreshed: ";
     
-    refreshArrow_ = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"RCLResources.bundle/arrow.png"]];
+    refreshArrow_ = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
     refreshArrow_.frame = CGRectMake((kRCLRefreshHeaderHeight - 27) / 2,
                                      (kRCLRefreshHeaderHeight - 44) / 2,
                                      27, 44);

@@ -28,6 +28,7 @@
 		3B0868541315BD460050B886 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B0868561315BD460050B886 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
 		3B0DC6F6137BF0AD0082D297 /* RCLResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B0DC6F5137BF0AD0082D297 /* RCLResources.bundle */; };
+		3B4766DC138AFD91003B25C1 /* RCLLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4766DB138AFD91003B25C1 /* RCLLoadingView.m */; };
 		3B502695133A986F00F2A350 /* RCLMemoryCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */; };
 		3B5026AD133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
 		3B5026AE133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
@@ -83,6 +84,8 @@
 		3B0868411315B8E10050B886 /* RCLAsyncDownloaderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLAsyncDownloaderTest.h; sourceTree = "<group>"; };
 		3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncDownloaderTest.m; sourceTree = "<group>"; };
 		3B0DC6F5137BF0AD0082D297 /* RCLResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RCLResources.bundle; sourceTree = "<group>"; };
+		3B4766DA138AFD91003B25C1 /* RCLLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLLoadingView.h; sourceTree = "<group>"; };
+		3B4766DB138AFD91003B25C1 /* RCLLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLLoadingView.m; sourceTree = "<group>"; };
 		3B502693133A986F00F2A350 /* RCLMemoryCacheTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCacheTest.h; sourceTree = "<group>"; };
 		3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLMemoryCacheTest.m; sourceTree = "<group>"; };
 		3B5026AA133AA7F700F2A350 /* RCLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLTableViewController.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				3B8C57A8134A5DFA00A2DABF /* RCLMapPin.m */,
 				3B8955B6137B23BF00144EC5 /* RCLBrowser.h */,
 				3B8955B7137B23BF00144EC5 /* RCLBrowser.m */,
+				3B4766DA138AFD91003B25C1 /* RCLLoadingView.h */,
+				3B4766DB138AFD91003B25C1 /* RCLLoadingView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				3B8C57A9134A5DFB00A2DABF /* RCLMapPin.m in Sources */,
 				3B82A00B134CFD3C00C06671 /* RCLMVCExample.m in Sources */,
 				3B8955B9137B23BF00144EC5 /* RCLBrowser.m in Sources */,
+				3B4766DC138AFD91003B25C1 /* RCLLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

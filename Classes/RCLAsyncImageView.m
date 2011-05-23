@@ -9,6 +9,7 @@
 #import "RCLAsyncImageView.h"
 #import "RCLAsyncDownloader.h"
 #import "RCL.h"
+#import "RCLMemoryCache.h"
 
 @implementation RCLAsyncImageView
 @synthesize url = url_;
@@ -37,25 +38,40 @@
 
 - (void)startDownload {
     [[RCLAsyncDownloader instance] downloadURL:url_ 
-                                  withDelegate:self];
+                                  withDelegate:self
+                                      useCache:YES
+                                 customHeaders:nil];
+}
+
+- (void)cancelDownload {
+    [[RCLAsyncDownloader instance] cancelDownloadsForDelegate:self];
 }
 
 - (void)setUrl:(NSURL *)url {
+    if (url == url_) {
+        return;
+    }
     if (self.url != nil && downloadInProgress_) {
         [[RCLAsyncDownloader instance] cancelDownloadForURL:url_ 
                                                    delegate:self];
     }
+    [url_ release];
+    url_ = [url retain];
     if (url_) {
-        [url_ release];
+        if ([[RCLMemoryCache instance] objectAvailableForKeyPath:[url_ absoluteString]]) {
+            self.image = [UIImage imageWithData:[[RCLMemoryCache instance] objectForKeyPath:[url_ absoluteString]]];
+        }
     }
-    url_ = url;
 }
 
 #pragma mark -
 #pragma mark RCLAsyncDownloaderDelegate
 - (void)downloaderDidDownloadData:(NSData *)data forUrl:(NSURL *)url {
+    self.contentMode = UIViewContentModeScaleAspectFill;
+    self.clipsToBounds = YES;
     self.image = [UIImage imageWithData:data];
     downloadInProgress_ = NO;
+    [[RCLMemoryCache instance] storeData:data forKeyPath:[url absoluteString] expires:[NSDate dateWithTimeIntervalSinceNow:60 * 5]];
 }
 
 - (void)downloaderDidFailWithError:(NSError *)error forUrl:(NSURL *)url {
@@ -64,7 +80,7 @@
 
 - (void)dealloc {
     if (downloadInProgress_) {
-        [[RCLAsyncDownloader instance] cancelDownloadForURL:url_ delegate:self];
+        [[RCLAsyncDownloader instance] cancelDownloadsForDelegate:self];
     }
     self.url = nil;
     [super dealloc];

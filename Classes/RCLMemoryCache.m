@@ -7,7 +7,7 @@
 //
 
 #import "RCLMemoryCache.h"
-#import "RCLString.m"
+#import "RCLString.h"
 
 @implementation RCLMemoryCache
 

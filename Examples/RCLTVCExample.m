@@ -7,7 +7,7 @@
 //
 
 #import "RCLTVCExample.h"
-
+#import "RCLLoadingView.h"
 @implementation RCLTVCExample
 
 - (void)viewDidLoad {
@@ -20,6 +20,10 @@
     [self addNames];
     [self addNames];
     [self addNames];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [RCLLoadingView showWithLabel:@"Loading..."];
 }
 
 - (void)addNames {
