@@ -58,10 +58,10 @@
     }
     isLoadingNextPage_ = YES;
     if (self.tableView.superview) {
-        CGPoint positionInWindow = [self.tableView.superview convertPoint:self.tableView.frame.origin toView:self.navigationController.view];
+        CGPoint positionInWindow = [self.tableView.superview convertPoint:self.tableView.frame.origin toView:self.tableView.superview];
         CGRect frame = CGRectMake(0, positionInWindow.y + self.tableView.frame.size.height - 18, self.tableView.frame.size.width, 18);
         loadingView_.frame = frame;
-        [self.navigationController.view addSubview:loadingView_];
+        [self.tableView.superview addSubview:loadingView_];
     }
     [(UIActivityIndicatorView *)[loadingView_ viewWithTag:1] startAnimating];
     
@@ -117,13 +117,14 @@
 }
 
 - (void)viewDidUnload {
-    [loadingView_ release];
-    loadingView_ = nil;
-    self.tableView = nil;
 }
 
 - (void)dealloc {
+    [loadingView_ removeFromSuperview];
+    [loadingView_ release];
+    loadingView_ = nil;
     self.dataSource = nil;
+    self.tableView = nil;
     [super dealloc];
 }
 

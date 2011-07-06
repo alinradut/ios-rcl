@@ -39,6 +39,11 @@
 - (void)downloadURL:(NSURL *)url withDelegate:(id<RCLAsyncDownloaderDelegate>)delegate useCache:(BOOL)useCache customHeaders:(NSDictionary *)customHeaders;
 
 /*!
+ Executes a POST request.
+ */
+- (void)post:(NSURL *)url withDelegate:(id)delegate headers:(NSDictionary *)headers body:(NSData *)body;
+
+/*!
  Cancel download for specified URL
  */
 - (void)cancelDownloadForURL:(NSURL *)url delegate:(id)delegate;

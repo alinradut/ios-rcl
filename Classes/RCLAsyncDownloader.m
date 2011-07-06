@@ -19,6 +19,9 @@
     NSDictionary *customHeaders_;
     NSMutableData *downloadedData_;
     NSURLConnection *connection_;
+    NSString *method_;
+    NSData *body_;
+    
     long long totalDownloadSize_;
     BOOL executing_;
     BOOL finished_;
@@ -28,6 +31,8 @@
 @property (nonatomic, assign) id delegate;
 @property (nonatomic, retain) NSURL *url;
 @property (nonatomic, retain) NSDictionary *customHeaders;
+@property (nonatomic, retain) NSString *method;
+@property (nonatomic, retain) NSData *body;
 @property (nonatomic, assign) BOOL cacheResult;
 @end
 
@@ -35,6 +40,8 @@
 @synthesize url = url_;
 @synthesize customHeaders = customHeaders_;
 @synthesize delegate = delegate_;
+@synthesize method = method_;
+@synthesize body = body_;
 @synthesize cacheResult = cacheResult_;
 
 - (void)start {
@@ -47,8 +54,24 @@
     [self willChangeValueForKey:@"isExecuting"];
     executing_ = YES;
     [self didChangeValueForKey:@"isExecuting"];
+    
     downloadedData_ = [[NSMutableData alloc] init];
-    NSURLRequest *request = [[[NSURLRequest alloc] initWithURL:url_] autorelease];
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] initWithURL:url_] autorelease];
+
+    // set the headers
+    for (NSString *header in [customHeaders_ allKeys]) {
+        NSLog(@"%@: %@", header, [customHeaders_ valueForKey:header]);
+        [request addValue:[customHeaders_ valueForKey:header] forHTTPHeaderField:header];
+    }
+    
+    // set the HTTP method
+    [request setHTTPMethod:method_];
+    
+    // set the HTTP body
+    if ([body_ length]) {
+        [request setHTTPBody:body_];
+    }
+    
     connection_ = [[NSURLConnection alloc] initWithRequest:request 
                                                   delegate:self];
     /*
@@ -248,6 +271,18 @@
     op.url = url;
     op.cacheResult = useCache;
     op.customHeaders = customHeaders;
+    op.method = @"GET";
+    [queue_ addOperation:op];
+    [op release];
+}
+
+- (void)post:(NSURL *)url withDelegate:(id)delegate headers:(NSDictionary *)headers body:(NSData *)body {
+    RCLDownloadOperation *op = [[RCLDownloadOperation alloc] init];
+    op.delegate = delegate;
+    op.url = url;
+    op.customHeaders = headers;
+    op.method = @"POST";
+    op.body = body;
     [queue_ addOperation:op];
     [op release];
 }

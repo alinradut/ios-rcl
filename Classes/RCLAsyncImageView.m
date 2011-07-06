@@ -57,7 +57,7 @@
     }
     [url_ release];
     url_ = [url retain];
-    if (url_) {
+    if ([[url_ absoluteString] length]) {
         if ([[RCLMemoryCache instance] objectAvailableForKeyPath:[url_ absoluteString]]) {
             self.image = [UIImage imageWithData:[[RCLMemoryCache instance] objectForKeyPath:[url_ absoluteString]]];
         }
@@ -79,9 +79,7 @@
 }
 
 - (void)dealloc {
-    if (downloadInProgress_) {
-        [[RCLAsyncDownloader instance] cancelDownloadsForDelegate:self];
-    }
+    [[RCLAsyncDownloader instance] cancelDownloadsForDelegate:self];
     self.url = nil;
     [super dealloc];
 }

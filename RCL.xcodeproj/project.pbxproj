@@ -50,6 +50,7 @@
 		3B918D8A13032EA600776B29 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
 		3B918DA81303343700776B29 /* RCLString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918DA71303343700776B29 /* RCLString.m */; };
 		3B92B5BD131AE1D9007AF47C /* RCLMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B92B5BC131AE1D9007AF47C /* RCLMapController.m */; };
+		3B94D89213C4DCB700377EEA /* RCLMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E32361316FB1200206157 /* RCLMemoryCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -411,6 +412,7 @@
 				3B82A00B134CFD3C00C06671 /* RCLMVCExample.m in Sources */,
 				3B8955B9137B23BF00144EC5 /* RCLBrowser.m in Sources */,
 				3B4766DC138AFD91003B25C1 /* RCLLoadingView.m in Sources */,
+				3B94D89213C4DCB700377EEA /* RCLMemoryCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

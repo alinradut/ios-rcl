@@ -35,6 +35,7 @@ static RCLLoadingView *loadingView;
         [label_ setTextAlignment:UITextAlignmentCenter];
         [label_ setTextColor:[UIColor whiteColor]];
         [label_ setFont:[UIFont boldSystemFontOfSize:16]];
+        [label_ setAdjustsFontSizeToFitWidth:YES];
         [backgroundView_ addSubview:label_];
         [label_ release];
         
@@ -51,6 +52,7 @@ static RCLLoadingView *loadingView;
     if (!loadingView) {
         loadingView = [[RCLLoadingView alloc] init];
     }
+    [[[UIApplication sharedApplication] keyWindow] bringSubviewToFront:loadingView];
     loadingView.label.text = label;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationOptionCurveEaseIn];
