@@ -18,14 +18,14 @@
     if (dataSource_ == nil) {
         self.dataSource = [NSMutableArray array];
     }
-
+    
     if (tableView_ == nil) {
         tableView_ = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
         tableView_.delegate = self;
         tableView_.dataSource = self;
         [self.view addSubview:tableView_];
     }
-
+    
     if (loadingView_ == nil) {
         loadingView_ = [[UIView alloc] initWithFrame:CGRectMake(0, self.tableView.frame.origin.y + self.tableView.frame.size.height - 18, self.tableView.frame.size.width, 18)];
         loadingView_.backgroundColor = [UIColor colorWithRed:.3 green:.3 blue:.3 alpha:.8];
@@ -40,7 +40,7 @@
         
         UIActivityIndicatorView *paginationSpinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
         paginationSpinner.tag = 1;
-
+        
         CGRect frame = paginationSpinner.frame;
         frame.size = CGSizeMake(17, 17);
         frame.origin.x = (loadingView_.frame.size.width - [label.text sizeWithFont:label.font].width)/2 - frame.size.width - 2;

@@ -37,3 +37,16 @@
     #define RCLError(xx, ... ) NSLog(@"[ERROR] %s:%d: " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
     #endif
 #endif
+
+#define CGRectSetPos( r, x, y )     CGRectMake( x, y, r.size.width, r.size.height )
+#define CGRectSetX( r, x )          CGRectMake( x, r.origin.y, r.size.width, r.size.height )
+#define CGRectSetY( r, y )          CGRectMake( r.origin.x, y, r.size.width, r.size.height )
+#define CGRectSetSize( r, w, h )    CGRectMake( r.origin.x, r.origin.y, w, h )
+#define CGRectSetWidth( r, w )      CGRectMake( r.origin.x, r.origin.y, w, r.size.height )
+#define CGRectSetHeight( r, h )     CGRectMake( r.origin.x, r.origin.y, r.size.width, h )
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
