@@ -28,6 +28,9 @@
 		3B0868541315BD460050B886 /* RCLAsyncDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8313032E4200776B29 /* RCLAsyncDownloader.m */; };
 		3B0868561315BD460050B886 /* RCLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B918D8913032EA600776B29 /* RCLAsyncImageView.m */; };
 		3B0DC6F6137BF0AD0082D297 /* RCLResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B0DC6F5137BF0AD0082D297 /* RCLResources.bundle */; };
+		3B19F8521484243F0050E7F6 /* RCLModalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B19F8511484243F0050E7F6 /* RCLModalPickerView.m */; };
+		3B19F856148432AB0050E7F6 /* RCLModalPickerExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B19F854148432AB0050E7F6 /* RCLModalPickerExample.m */; };
+		3B19F857148432AB0050E7F6 /* RCLModalPickerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B19F855148432AB0050E7F6 /* RCLModalPickerExample.xib */; };
 		3B4766DC138AFD91003B25C1 /* RCLLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4766DB138AFD91003B25C1 /* RCLLoadingView.m */; };
 		3B502695133A986F00F2A350 /* RCLMemoryCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B502694133A986F00F2A350 /* RCLMemoryCacheTest.m */; };
 		3B5026AD133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
@@ -85,6 +88,11 @@
 		3B0868411315B8E10050B886 /* RCLAsyncDownloaderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLAsyncDownloaderTest.h; sourceTree = "<group>"; };
 		3B0868421315B8E10050B886 /* RCLAsyncDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLAsyncDownloaderTest.m; sourceTree = "<group>"; };
 		3B0DC6F5137BF0AD0082D297 /* RCLResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RCLResources.bundle; sourceTree = "<group>"; };
+		3B19F8501484243F0050E7F6 /* RCLModalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLModalPickerView.h; sourceTree = "<group>"; };
+		3B19F8511484243F0050E7F6 /* RCLModalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLModalPickerView.m; sourceTree = "<group>"; };
+		3B19F853148432AB0050E7F6 /* RCLModalPickerExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLModalPickerExample.h; sourceTree = "<group>"; };
+		3B19F854148432AB0050E7F6 /* RCLModalPickerExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLModalPickerExample.m; sourceTree = "<group>"; };
+		3B19F855148432AB0050E7F6 /* RCLModalPickerExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCLModalPickerExample.xib; sourceTree = "<group>"; };
 		3B4766DA138AFD91003B25C1 /* RCLLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLLoadingView.h; sourceTree = "<group>"; };
 		3B4766DB138AFD91003B25C1 /* RCLLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLLoadingView.m; sourceTree = "<group>"; };
 		3B502693133A986F00F2A350 /* RCLMemoryCacheTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMemoryCacheTest.h; sourceTree = "<group>"; };
@@ -174,6 +182,8 @@
 				3B8955B7137B23BF00144EC5 /* RCLBrowser.m */,
 				3B4766DA138AFD91003B25C1 /* RCLLoadingView.h */,
 				3B4766DB138AFD91003B25C1 /* RCLLoadingView.m */,
+				3B19F8501484243F0050E7F6 /* RCLModalPickerView.h */,
+				3B19F8511484243F0050E7F6 /* RCLModalPickerView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -276,6 +286,9 @@
 				3B82A008134CFD3C00C06671 /* RCLMVCExample.h */,
 				3B82A009134CFD3C00C06671 /* RCLMVCExample.m */,
 				3B82A00A134CFD3C00C06671 /* RCLMVCExample.xib */,
+				3B19F853148432AB0050E7F6 /* RCLModalPickerExample.h */,
+				3B19F854148432AB0050E7F6 /* RCLModalPickerExample.m */,
+				3B19F855148432AB0050E7F6 /* RCLModalPickerExample.xib */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -363,6 +376,7 @@
 				3B82A00C134CFD3C00C06671 /* RCLMVCExample.xib in Resources */,
 				3B82A00F134CFD7900C06671 /* RCLMVCExample.xib in Resources */,
 				3B0DC6F6137BF0AD0082D297 /* RCLResources.bundle in Resources */,
+				3B19F857148432AB0050E7F6 /* RCLModalPickerExample.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +427,8 @@
 				3B8955B9137B23BF00144EC5 /* RCLBrowser.m in Sources */,
 				3B4766DC138AFD91003B25C1 /* RCLLoadingView.m in Sources */,
 				3B94D89213C4DCB700377EEA /* RCLMemoryCache.m in Sources */,
+				3B19F8521484243F0050E7F6 /* RCLModalPickerView.m in Sources */,
+				3B19F856148432AB0050E7F6 /* RCLModalPickerExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

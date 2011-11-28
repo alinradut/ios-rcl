@@ -10,6 +10,7 @@
 #import "RCLMVCExample.h"
 #import "RCLTVCExample.h"
 #import "RCLRefreshTableViewController.h"
+#import "RCLModalPickerExample.h"
 #import "RCLBrowser.h"
 
 @implementation RCLAppDelegate
@@ -28,7 +29,7 @@
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
-    RCLTVCExample *c = [[[RCLTVCExample alloc] init] autorelease];
+    RCLModalPickerExample *c = [[[RCLModalPickerExample alloc] init] autorelease];
     
     [navigationController setViewControllers:[NSArray arrayWithObject:c]];
     return YES;
