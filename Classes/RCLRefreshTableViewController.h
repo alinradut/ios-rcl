@@ -18,14 +18,26 @@
  Copyright (c) 2010 Leah Culver
  https://github.com/leah/PullToRefresh
  */
-@class RCLTableRefreshHeader;
 @interface RCLRefreshTableViewController : UITableViewController {
-    RCLTableRefreshHeader *refreshHeaderView_;
+    UIView *refreshHeaderView_;
+    UILabel *refreshLabel_;
+    UILabel *lastRefreshLabel_;
+    UIImageView *refreshArrow_;
+    UIActivityIndicatorView *refreshSpinner_;
+    
     BOOL isDragging_;
     BOOL isReloading_;
     
+    NSString *textPull_;
+    NSString *textRelease_;
+    NSString *textLoading_;
+    
     NSDate *lastRefreshDate_;
 }
+
+@property (nonatomic, copy) NSString *textPull;
+@property (nonatomic, copy) NSString *textRelease;
+@property (nonatomic, copy) NSString *textLoading;
 
 /*!
  This method is called when the user has completed a PTR gesture.
