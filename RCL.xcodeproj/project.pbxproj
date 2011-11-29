@@ -37,6 +37,8 @@
 		3B5026AE133AA7F700F2A350 /* RCLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */; };
 		3B5026B4133AB13500F2A350 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5026B3133AB13500F2A350 /* QuartzCore.framework */; };
 		3B5026B5133AB15100F2A350 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5026B3133AB13500F2A350 /* QuartzCore.framework */; };
+		3B71E1DF148502E800CD166D /* RCLTableRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71E1DE148502E800CD166D /* RCLTableRefreshHeader.m */; };
+		3B71E1E01485030500CD166D /* RCLTableRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71E1DE148502E800CD166D /* RCLTableRefreshHeader.m */; };
 		3B814C2F133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */; };
 		3B814C30133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */; };
 		3B82A00B134CFD3C00C06671 /* RCLMVCExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82A009134CFD3C00C06671 /* RCLMVCExample.m */; };
@@ -100,6 +102,8 @@
 		3B5026AA133AA7F700F2A350 /* RCLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLTableViewController.h; sourceTree = "<group>"; };
 		3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLTableViewController.m; sourceTree = "<group>"; };
 		3B5026B3133AB13500F2A350 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3B71E1DD148502E700CD166D /* RCLTableRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLTableRefreshHeader.h; sourceTree = "<group>"; };
+		3B71E1DE148502E800CD166D /* RCLTableRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLTableRefreshHeader.m; sourceTree = "<group>"; };
 		3B814C2D133D3FDA00EAB1F1 /* RCLRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLRefreshTableViewController.h; sourceTree = "<group>"; };
 		3B814C2E133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLRefreshTableViewController.m; sourceTree = "<group>"; };
 		3B82A008134CFD3C00C06671 /* RCLMVCExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLMVCExample.h; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				3B8E32361316FB1200206157 /* RCLMemoryCache.m */,
 				3B92B5BB131AE1D9007AF47C /* RCLMapController.h */,
 				3B92B5BC131AE1D9007AF47C /* RCLMapController.m */,
+				3B71E1DD148502E700CD166D /* RCLTableRefreshHeader.h */,
+				3B71E1DE148502E800CD166D /* RCLTableRefreshHeader.m */,
 				3B5026AA133AA7F700F2A350 /* RCLTableViewController.h */,
 				3B5026AB133AA7F700F2A350 /* RCLTableViewController.m */,
 				3B814C2D133D3FDA00EAB1F1 /* RCLRefreshTableViewController.h */,
@@ -429,6 +435,7 @@
 				3B94D89213C4DCB700377EEA /* RCLMemoryCache.m in Sources */,
 				3B19F8521484243F0050E7F6 /* RCLModalPickerView.m in Sources */,
 				3B19F856148432AB0050E7F6 /* RCLModalPickerExample.m in Sources */,
+				3B71E1DF148502E800CD166D /* RCLTableRefreshHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +460,7 @@
 				3B5026AE133AA7F700F2A350 /* RCLTableViewController.m in Sources */,
 				3B814C30133D3FDA00EAB1F1 /* RCLRefreshTableViewController.m in Sources */,
 				3B8C57AA134A5DFB00A2DABF /* RCLMapPin.m in Sources */,
+				3B71E1E01485030500CD166D /* RCLTableRefreshHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
